@@ -4,7 +4,10 @@ import com.opensymphony.xwork2.ActionSupport;
 
 import org.apache.struts2.interceptor.SessionAware;
 import javax.faces.bean.SessionScoped;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +24,6 @@ public class Login extends ActionSupport {
     ResultSet rs=null;
     String DBpassword=null;
     String DBidentity=null;
-    private int userID;
     private String username;
     private String password;
     private String identity;
@@ -48,7 +50,7 @@ public class Login extends ActionSupport {
     public void setPassword(String password) {
         this. password = password;
     }
-    public String loginUser() throws SQLException {
+    public String loginUser(){
         try {
             Class.forName("com.mysql.jdbc.Driver");
         } catch (Exception e) {
@@ -74,20 +76,12 @@ public class Login extends ActionSupport {
             return "fail";
         }
         if (DBpassword.equals(password)&&DBidentity.equals("teacher")){
-            userID = Integer.parseInt(rs.getString("id"));
-            attributes = ActionContext.getContext().getSession();
-            attributes.put("userID",userID);
-            return "teacher";
+            return "success";
         }
         if (DBpassword.equals(password)&&DBidentity.equals("student")){
             attributes = ActionContext.getContext().getSession();
             attributes.put("username",username);
-            return "student";
-        }
-        if (DBpassword.equals(password)&&DBidentity.equals("administrator")){
-            attributes = ActionContext.getContext().getSession();
-            attributes.put("username",username);
-            return "administrator";
+            return "display";
         }
         else{
             message="登录失败";
