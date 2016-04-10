@@ -55,7 +55,9 @@
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <bean id="studentDao" class="main.java.bupt.dao.StudentDaoImpl"/>
+    <bean id="teamDao" class="main.java.bupt.dao.TeamDaoImpl"/>
 
     <bean id="studentService" class="main.java.bupt.service.StudentServiceImpl"/>
+    <bean id="teamService" class="main.java.bupt.service.TeamServiceImpl"/>
 
 </beans>

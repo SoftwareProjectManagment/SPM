@@ -1,6 +1,5 @@
 package main.java.bupt.dao;
 
-import main.java.bupt.domain.Student;
 import main.java.bupt.domain.Team;
 
 import java.util.List;
@@ -16,13 +15,5 @@ public interface TeamDao {
     void update(Team team);
 
     public List<Team> getTeam(int teamNumber);
-
-    public Team listToTeam(List<Team> teamList);
-
-    public String updateTeamMember(int teamNumber,Student student);
-
-    public int digitToNum(int teamNum,int digit);
-
-    public String deleteStudent(int teamNum,int studentNum);
 
 }
