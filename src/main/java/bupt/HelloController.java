@@ -35,18 +35,35 @@ public class HelloController {
         model.addAttribute("id", student.getId());
         model.addAttribute("name", student.getName());
         model.addAttribute("score", student.getScore());
-        model.addAttribute("lesson",student.getLesson());
+        model.addAttribute("lesson",student.getGroup());
         studentService.insert(student);
         return "result";
     }
 
-    @RequestMapping(value = "/display.mvc", method = RequestMethod.GET)
+    @RequestMapping(value = "/studentpanel.mvc", method = RequestMethod.GET)
     public ModelAndView display(HttpServletRequest request){
         String name = (String) request.getSession().getAttribute("username");
         List<Student> list=studentService.getStudent(name);
         final Map<String, Object> model = new LinkedHashMap<String, Object>();
         model.put("resultList", list);
-        return new ModelAndView("display",model);
+        model.put("userName", name);
+        return new ModelAndView("studentpanel",model);
+    }
+
+    @RequestMapping(value = "/deploy.mvc", method = RequestMethod.POST)
+    public ModelAndView delpoy(HttpServletRequest request){
+        String name = (String) request.getSession().getAttribute("username");
+        final Map<String, Object> model = new LinkedHashMap<String, Object>();
+        model.put("userName", name);
+        return new ModelAndView("deploy",model);
+    }
+
+    @RequestMapping(value = "/score.mvc", method = RequestMethod.POST)
+    public ModelAndView score(HttpServletRequest request){
+        String name = (String) request.getSession().getAttribute("username");
+        final Map<String, Object> model = new LinkedHashMap<String, Object>();
+        model.put("userName", name);
+        return new ModelAndView("score",model);
     }
 
 }

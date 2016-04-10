@@ -33,14 +33,14 @@
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="11" parent="3" name="lesson">
+      <column id="11" parent="3" name="name">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="12" parent="3" name="name">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="13" parent="3" name="score">
+      <column id="12" parent="3" name="score">
         <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="13" parent="3" name="group">
         <data-type>int(11)</data-type>
       </column>
       <key id="14" parent="3" name="PRIMARY">

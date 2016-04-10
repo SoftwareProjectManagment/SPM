@@ -10,7 +10,7 @@
             <result name="fail">Index.jsp</result>
             <!-- 重定向 -->
             <result name="success" type="redirect">student.mvc</result>
-            <result name="display" type="redirect">display.mvc</result>
+            <result name="display" type="redirect">studentpanel.mvc</result>
         </action>
         <action name="register" class="action.Login" method="registerPage">
             <result name="success">/WEB-INF/pages/register.jsp</result>

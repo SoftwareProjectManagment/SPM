@@ -19,20 +19,12 @@ public class Student {
 
     private int score;
 
-    private String lesson;
+    private int group;
 
-    public String getLesson() {
-        return lesson;
-    }
-
-    public void setLesson(String lesson) {
-        this.lesson = lesson;
-    }
-
-    public Student(String name, int score, String lesson) {
+    public Student(String name, int score, int group) {
         this.name = name;
         this.score = score;
-        this.lesson = lesson;
+        this.group = group;
     }
 
     public Student() {
@@ -60,5 +52,13 @@ public class Student {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public int getGroup() {
+        return group;
+    }
+
+    public void setGroup(int group) {
+        this.group = group;
     }
 }
