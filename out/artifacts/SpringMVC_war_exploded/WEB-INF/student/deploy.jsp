@@ -90,11 +90,19 @@
                     <div class="form-group">
                         <label for="IP-address" class="sr-only">IP</label>
                         <select class="form-control" id="IP-address" name="IPaddress">
+<<<<<<< HEAD
                             <option value="10.1.1.1">10.1.1.1</option>
                             <option value="10.1.1.2">10.1.1.2</option>
                             <option value="10.1.1.3">10.1.1.3</option>
                             <option value="10.1.1.4">10.1.1.4</option>
                             <option value="10.1.1.5">10.1.1.5</option>
+=======
+                            <option value="one">10.1.1.1</option>
+                            <option value="two">10.1.1.2</option>
+                            <option value="three">10.1.1.3</option>
+                            <option value="four">10.1.1.4</option>
+                            <option value="five">10.1.1.5</option>
+>>>>>>> bfadc73d6e1bf849daec0c8753286f896fe147b8
                         </select>
                         <!--input type="text" class="form-control" id="subscribe-email" placeholder="Email address"-->
                     </div>
@@ -112,18 +120,27 @@
             <c:choose>
                 <c:when test="${isDeployed == 'success'}">
                     <div class="row">
+<<<<<<< HEAD
                         <div class="col-lg-10">
+=======
+                        <div class="col-lg-11">
+>>>>>>> bfadc73d6e1bf849daec0c8753286f896fe147b8
                             <div class="progress" >
                                 <div class="progress-bar" role="progressbar" style="width: 0%;" data-percentage="100">
                                 </div>
                             </div>
                         </div>
+<<<<<<< HEAD
                         <div class="col-lg-2">
+=======
+                        <div class="col-lg-1">
+>>>>>>> bfadc73d6e1bf849daec0c8753286f896fe147b8
                             <button type="button" class="btn btn-primary" href="#frontpage">下一步</button>
                         </div>
                     </div>
                 </c:when>
                 <c:otherwise>
+<<<<<<< HEAD
                     <div class="row">
                     <div class="col-lg-10">
                         <div class="progress" ></div>
@@ -131,6 +148,17 @@
                     <div class="col-lg-2">
                         <button type="button" class="btn btn-primary" disabled="disabled">下一步</button>
                     </div>
+=======
+                    <div class="col-lg-11">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
+                                0%
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-1">
+                    <button type="submit" class="btn btn-primary" disabled="disabled">下一步</button>
+>>>>>>> bfadc73d6e1bf849daec0c8753286f896fe147b8
                     </div>
                 </c:otherwise>
             </c:choose>

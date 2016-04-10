@@ -76,6 +76,7 @@ public class HelloController {
     }
 
     @RequestMapping(value = "/upload.mvc", method = RequestMethod.POST)
+<<<<<<< HEAD
     public ModelAndView upload(@ModelAttribute()Team team,ModelMap modelMap, HttpServletRequest request){
         String filename = request.getParameter("filename");
         String IPaddress = request.getParameter("IPaddress");
@@ -109,12 +110,25 @@ public class HelloController {
 
 
         List<Team> teamListAgain = teamService.getTeam(20);
+=======
+    public ModelAndView upload(HttpServletRequest request){
+        String filename = request.getParameter("filename");
+        String IPaddress = request.getParameter("IPaddress");
+        String name = (String) request.getSession().getAttribute("username");
+        List<Student> list=studentService.getStudent(name);
+        //do deploy
+
+>>>>>>> bfadc73d6e1bf849daec0c8753286f896fe147b8
         final Map<String, Object> model = new LinkedHashMap<String, Object>();
 
         String isDeployed="success";
 
         model.put("isDeployed",isDeployed);
+<<<<<<< HEAD
         model.put("resultList", teamListAgain);
+=======
+        model.put("resultList", list);
+>>>>>>> bfadc73d6e1bf849daec0c8753286f896fe147b8
 
         return new ModelAndView("deploy",model);
     }
