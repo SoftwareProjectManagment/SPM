@@ -13,13 +13,19 @@
     <title>StudentPanel</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 
+    <style>
+        body {
+            padding-top : 50px;
+        }
+    </style>
+
 </head>
 <body>
 <header>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#example-nav-collapse">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#example-nav-collapse" aria-expanded="false" aria-controls="navbar">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -29,25 +35,29 @@
             </div>
 
             <div class="collapse navbar-collapse" id="example-nav-collapse">
-                <c:choose>
-                    <c:when test="${empty resultList}">
-                        <p class="navbar-text">没有权限</p>
-                    </c:when>
-                    <c:otherwise>
-                        <c:forEach var="result" items="${resultList}">
-                            <p class="navbar-text">学号：${result.id}</p>
-                            <p class="navbar-text">姓名：${result.name}</p>
-                            <p class="navbar-text">组号：${result.group}</p>
-                        </c:forEach>
-                    </c:otherwise>
-                </c:choose>
-                <form action="/SpringMVC_war_exploded/" class="nav-form navbar-right" method="post">
+                <ul class="nav navbar-nav">
+                    <c:choose>
+                        <c:when test="${empty resultList}">
+                            <p class="navbar-text">没有权限</p>
+                        </c:when>
+                        <c:otherwise>
+                            <c:forEach var="result" items="${resultList}">
+                                <p class="navbar-text">学号：${result.id}</p>
+                                <p class="navbar-text">姓名：${result.name}</p>
+                                <p class="navbar-text">组号：${result.group}</p>
+                            </c:forEach>
+                        </c:otherwise>
+                    </c:choose>
+                </ul>
+                <form action="/SpringMVC_war_exploded/" class="nav-form navbar-right" method="post" role="button">
                     <button type="submit" class="btn btn-default navbar-btn" >退出</button>
                 </form>
+
             </div>
 
         </div>
     </nav>
+
 </header>
 
 <div class="container">
@@ -57,10 +67,10 @@
         <c:choose>
             <c:when test="${empty resultList}">
                 <form action="deploy.mvc" method="post">
-                    <button type="submit" class="btn btn-primary" disabled="false">开始安装部署系统</button>
+                    <button type="submit" class="btn btn-primary" disabled="disabled">开始安装部署系统</button>
                 </form>
                 <form action="score.mvc" method="post">
-                    <button type="submit" class="btn btn-primary" disabled="false">查看成绩</button>
+                    <button type="submit" class="btn btn-primary" disabled="disabled">查看成绩</button>
                 </form>
             </c:when>
             <c:otherwise>
@@ -72,8 +82,7 @@
                 </form>
             </c:otherwise>
         </c:choose>
-
-    </div>
+        </div>
 </div>
 </body>
 </html>

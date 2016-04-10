@@ -53,7 +53,9 @@ public class HelloController {
     @RequestMapping(value = "/deploy.mvc", method = RequestMethod.POST)
     public ModelAndView delpoy(HttpServletRequest request){
         String name = (String) request.getSession().getAttribute("username");
+        List<Student> list=studentService.getStudent(name);
         final Map<String, Object> model = new LinkedHashMap<String, Object>();
+        model.put("resultList", list);
         model.put("userName", name);
         return new ModelAndView("deploy",model);
     }
@@ -61,9 +63,29 @@ public class HelloController {
     @RequestMapping(value = "/score.mvc", method = RequestMethod.POST)
     public ModelAndView score(HttpServletRequest request){
         String name = (String) request.getSession().getAttribute("username");
+        List<Student> list=studentService.getStudent(name);
         final Map<String, Object> model = new LinkedHashMap<String, Object>();
+        model.put("resultList", list);
         model.put("userName", name);
         return new ModelAndView("score",model);
+    }
+
+    @RequestMapping(value = "/upload.mvc", method = RequestMethod.POST)
+    public ModelAndView upload(HttpServletRequest request){
+        String filename = request.getParameter("filename");
+        String IPaddress = request.getParameter("IPaddress");
+        String name = (String) request.getSession().getAttribute("username");
+        List<Student> list=studentService.getStudent(name);
+        //do deploy
+
+        final Map<String, Object> model = new LinkedHashMap<String, Object>();
+
+        String isDeployed="success";
+
+        model.put("isDeployed",isDeployed);
+        model.put("resultList", list);
+
+        return new ModelAndView("deploy",model);
     }
 
 }
