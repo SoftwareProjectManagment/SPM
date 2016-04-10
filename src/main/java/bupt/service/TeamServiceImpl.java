@@ -40,4 +40,10 @@ public class TeamServiceImpl implements TeamService{
     public List<Team> getTeam(int teamNumber) {
         return teamDao.getTeam(teamNumber);
     }
+
+    @Override
+    @Transactional
+    public Team listToTeam(List<Team> teamList){
+        return teamDao.listToTeam(teamList);
+    }
 }

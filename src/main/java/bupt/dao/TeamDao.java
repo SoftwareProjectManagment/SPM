@@ -16,4 +16,6 @@ public interface TeamDao {
 
     public List<Team> getTeam(int teamNumber);
 
+    public Team listToTeam(List<Team> teamList);
+
 }

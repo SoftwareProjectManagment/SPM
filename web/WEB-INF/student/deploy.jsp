@@ -71,6 +71,7 @@
     </div>
 </div>
 
+<hr>
 
 
 <div class="container text-center">
@@ -90,24 +91,16 @@
                     <div class="form-group">
                         <label for="IP-address" class="sr-only">IP</label>
                         <select class="form-control" id="IP-address" name="IPaddress">
-<<<<<<< HEAD
                             <option value="10.1.1.1">10.1.1.1</option>
                             <option value="10.1.1.2">10.1.1.2</option>
                             <option value="10.1.1.3">10.1.1.3</option>
                             <option value="10.1.1.4">10.1.1.4</option>
                             <option value="10.1.1.5">10.1.1.5</option>
-=======
-                            <option value="one">10.1.1.1</option>
-                            <option value="two">10.1.1.2</option>
-                            <option value="three">10.1.1.3</option>
-                            <option value="four">10.1.1.4</option>
-                            <option value="five">10.1.1.5</option>
->>>>>>> bfadc73d6e1bf849daec0c8753286f896fe147b8
                         </select>
                         <!--input type="text" class="form-control" id="subscribe-email" placeholder="Email address"-->
                     </div>
                     <c:choose>
-                        <c:when test="${isDeployed == 'success'}">
+                        <c:when test="${deployedFile != 'in:valid'}">
                             <button type="submit" class="btn btn-primary" disabled="disabled">开始上传</button>
                         </c:when>
                         <c:otherwise>
@@ -117,78 +110,425 @@
 
                 </form>
             </div>
-            <c:choose>
-                <c:when test="${isDeployed == 'success'}">
-                    <div class="row">
-<<<<<<< HEAD
-                        <div class="col-lg-10">
-=======
-                        <div class="col-lg-11">
->>>>>>> bfadc73d6e1bf849daec0c8753286f896fe147b8
-                            <div class="progress" >
-                                <div class="progress-bar" role="progressbar" style="width: 0%;" data-percentage="100">
+            <br>
+            <div>
+                <c:choose>
+                    <c:when test="${deployedFile != 'in:valid' && checkFrontPage == -1}">
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <div class="progress" >
+                                    <div class="progress-bar" role="progressbar" style="width: 0%;" data-percentage="100">
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-<<<<<<< HEAD
-                        <div class="col-lg-2">
-=======
-                        <div class="col-lg-1">
->>>>>>> bfadc73d6e1bf849daec0c8753286f896fe147b8
-                            <button type="button" class="btn btn-primary" href="#frontpage">下一步</button>
-                        </div>
-                    </div>
-                </c:when>
-                <c:otherwise>
-<<<<<<< HEAD
-                    <div class="row">
-                    <div class="col-lg-10">
-                        <div class="progress" ></div>
-                    </div>
-                    <div class="col-lg-2">
-                        <button type="button" class="btn btn-primary" disabled="disabled">下一步</button>
-                    </div>
-=======
-                    <div class="col-lg-11">
-                        <%--<div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em;">
-                                0%
+                            <div class="col-lg-2">
+                                <button type="button" class="btn btn-primary" href="#frontpage">下一步</button>
                             </div>
-                        </div>--%>
-                    </div>
-                    <div class="col-lg-1">
-                    <button type="submit" class="btn btn-primary" disabled="disabled">下一步</button>
->>>>>>> bfadc73d6e1bf849daec0c8753286f896fe147b8
-                    </div>
-                </c:otherwise>
-            </c:choose>
+                        </div>
+                    </c:when>
+                    <c:otherwise>
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <div class="progress" ></div>
+                            </div>
+                            <div class="col-lg-2">
+                                <button type="button" class="btn btn-primary" disabled="disabled" href="#frontpage">下一步</button>
+                            </div>
+                        </div>
+                    </c:otherwise>
+                </c:choose>
+            </div>
         </div>
     </section>
 
+    <hr>
     <%--FRONTPAGE--%>
 
     <section>
-        <div class="container text-center" id="frontpage">
-            <c:choose>
-                <c:when test="${isDeployed == 'success'}">
-                    <button type="submit" class="btn btn-primary">开始检测首页</button>
-                </c:when>
-                <c:otherwise>
-                    <button type="submit" class="btn btn-primary" disabled="disabled">开始检测首页</button>
-                </c:otherwise>
-            </c:choose>
+        <div class="well" id="frontpage">
+            <div class="container text-center">
+                <h2>系统检测&首页检测</h2>
+            </div>
+            <div class="container text-center">
+                <form action="frontpage.mvc" class="form-inline" role="form" method="post">
+                    <c:choose>
+                        <c:when test="${checkFrontPage == -1 && deployedFile != 'in:valid' && deployedIP != 'in:valid'}">
+                            <div class="container text-center">
+                                <button type="submit" class="btn btn-primary">开始检测首页</button>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="container text-center">
+                                <button type="submit" class="btn btn-primary" disabled="disabled">开始检测首页</button>
+                            </div>
+                        </c:otherwise>
+                    </c:choose>
+                </form>
+            </div>
+            <br>
+            <div>
+                <c:choose>
+                    <c:when test="${ checkFrontPage != -1 && checkFunction == -1 && checkCodeOne == -1 && checkCodeTwo == -1 }">
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <div class="progress" >
+                                    <div class="progress-bar" role="progressbar" style="width: 0%;" data-percentage="100">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-1">
+                                <button type="button" class="btn btn-primary" href="#">打开首页</button>
+                            </div>
+                            <div class="col-lg-1">
+                                <button type="button" class="btn btn-primary" href="#frontpage">下一步</button>
+                            </div>
+                        </div>
+                    </c:when>
+                    <c:otherwise>
+                        <div class="row">
+                            <div class="col-lg-10">
+                                <div class="progress" ></div>
+                            </div>
+                            <div class="col-lg-1">
+                                <button type="button" class="btn btn-primary" disabled="disabled" href="#">打开首页</button>
+                            </div>
+                            <div class="col-lg-1">
+                                <button type="button" class="btn btn-primary" disabled="disabled" href="#function">下一步</button>
+                            </div>
+                        </div>
+                    </c:otherwise>
+                </c:choose>
+            </div>
         </div>
     </section>
-    <!--div class="progress progress-success">
-        <div class="bar" style="float: left; width: 0%; ></div>
-    </div-->
 
+    <hr>
+    <%--FUNCTION--%>
+    <section>
+        <div class="well" id="function">
+            <div class="container text-center">
+                <h2>功能测试</h2>
+            </div>
+            <div class="container text-center">
+                <form action="function.mvc" class="form-inline" role="form" method="post">
+                    <c:choose>
+                        <c:when test="${ checkFrontPage != -1 && checkFunction == -1 && checkPerformance == -1}">
+                            <div class="container text-center">
+                                <button type="submit" class="btn btn-primary">开始功能测试</button>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="container text-center">
+                                <button type="submit" class="btn btn-primary" disabled="disabled">开始功能测试</button>
+                            </div>
+                        </c:otherwise>
+                    </c:choose>
+                </form>
+            </div>
+            <br>
+            <div>
+                <c:choose>
+                <c:when test="${checkFunction != -1 }">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="panel panel-default">
+                                <!-- Default panel contents -->
+                                <div class="panel-heading">功能测试</div>
+                                <!-- Table -->
+                                <table class="table">
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">测试用例1</th>
+                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">测试用例2</th>
+                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">测试用例3</th>
+                                        <th><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">测试用例4</th>
+                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">测试用例5</th>
+                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-primary" href="#performance">下一步</button>
+                        </div>
+                    </div>
+                </c:when>
+                <c:otherwise>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">功能测试</div>
+                            <!-- Table -->
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <th scope="row">测试用例1</th>
+                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">测试用例2</th>
+                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">测试用例3</th>
+                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">测试用例4</th>
+                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">测试用例5</th>
+                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="button" class="btn btn-primary" disabled="disabled" href="#performance">下一步</button>
+                    </div>
+                </div>
+            </c:otherwise>
+            </c:choose>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+    <%--PERFORMACE--%>
+    <section>
+        <div class="well" id="performance">
+            <div class="container text-center">
+                <h2>性能测试</h2>
+            </div>
+            <div class="container text-center">
+                <form action="performance.mvc" class="form-inline" role="form" method="post">
+                    <c:choose>
+                        <c:when test="${checkFunction != -1 && checkPerformance == -1 && checkCodeOne == -1 && checkCodeTwo == -1}">
+                            <div class="container text-center">
+                                <button type="submit" class="btn btn-primary">开始性能测试</button>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="container text-center">
+                                <button type="submit" class="btn btn-primary" disabled="disabled">开始性能测试</button>
+                            </div>
+                        </c:otherwise>
+                    </c:choose>
+                </form>
+            </div>
+            <br>
+            <div>
+                <c:choose>
+                <c:when test="${checkPerformance != -1 }">
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="panel panel-default">
+                                <!-- Default panel contents -->
+                                <div class="panel-heading">性能测试</div>
+                                <!-- Table -->
+                                <table class="table">
+                                    <tbody>
+                                    <tr>
+                                        <th scope="row">测试用例1</th>
+                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">测试用例2</th>
+                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">测试用例3</th>
+                                        <th><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">测试用例4</th>
+                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">测试用例5</th>
+                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-primary" href="#performance">下一步</button>
+                        </div>
+                    </div>
+                </c:when>
+                <c:otherwise>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="panel panel-default">
+                            <!-- Default panel contents -->
+                            <div class="panel-heading">性能测试</div>
+                            <!-- Table -->
+                            <table class="table">
+                                <tbody>
+                                <tr>
+                                    <th scope="row">测试用例1</th>
+                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">测试用例2</th>
+                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">测试用例3</th>
+                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">测试用例4</th>
+                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">测试用例5</th>
+                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <button type="button" class="btn btn-primary" disabled="disabled" href="#performance">下一步</button>
+                    </div>
+                </div>
+            </c:otherwise>
+            </c:choose>
+            </div>
+        </div>
+    </section>
+
+        <hr>
+        <%--CODE--%>
+        <section>
+            <div class="well" id="code">
+                <div class="container text-center">
+                    <h2>代码检测</h2>
+                </div>
+                <div class="container text-center">
+                    <form action="code.mvc" class="form-inline" role="form" method="post">
+                        <c:choose>
+                            <c:when test="${checkPerformance != -1 && checkCodeOne == -1 && checkCodeTwo == -1  && checkDocument == -1}">
+                                <div class="container text-center">
+                                    <button type="submit" class="btn btn-primary">开始检测代码</button>
+                                </div>
+                            </c:when>
+                            <c:otherwise>
+                                <div class="container text-center">
+                                    <button type="submit" class="btn btn-primary" disabled="disabled">开始检测代码</button>
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
+                    </form>
+                </div>
+                <br>
+                <div>
+                    <c:choose>
+                        <c:when test="${deployedFile != 'in:valid' && deployedIP != 'in:valid' && checkFrontPage != -1 && checkFunction != -1 && checkPerformance != -1 && checkCodeOne != -1 && checkCodeTwo != -1 && checkDocument == -1}">
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <div class="progress" >
+                                        <div class="progress-bar" role="progressbar" style="width: 0%;" data-percentage="100">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-primary" href="#frontpage">下一步</button>
+                                </div>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <div class="progress" ></div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <button type="button" class="btn btn-primary" disabled="disabled" href="#function">下一步</button>
+                                </div>
+                            </div>
+                        </c:otherwise>
+                    </c:choose>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+        <%--DOCUMENT--%>
+        <section>
+            <div class="well" id="document">
+                <div class="container text-center">
+                    <h2>文档形式检测</h2>
+                </div>
+                <div class="container text-center">
+                    <form action="document.mvc" class="form-inline" role="form" method="post">
+                        <c:choose>
+                            <c:when test="${checkCodeOne != -1 && checkCodeTwo != -1  && checkPerformance != -1}">
+                                <div class="container text-center">
+                                    <button type="submit" class="btn btn-primary">开始检测文档</button>
+                                </div>
+                            </c:when>
+                            <c:otherwise>
+                                <div class="container text-center">
+                                    <button type="submit" class="btn btn-primary" disabled="disabled">开始检测文档</button>
+                                </div>
+                            </c:otherwise>
+                        </c:choose>
+                    </form>
+                </div>
+                <br>
+                <div>
+                    <c:choose>
+                        <c:when test="${deployedFile != 'in:valid' && deployedIP != 'in:valid' && checkFrontPage != -1 && checkFunction != -1 && checkCodeOne != -1 && checkCodeTwo != -1 && checkDocument != -1}">
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <div class="progress" >
+                                        <div class="progress-bar" role="progressbar" style="width: 0%;" data-percentage="100">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <div class="row">
+                                <div class="col-lg-10">
+                                    <div class="progress" ></div>
+                                </div>
+                            </div>
+                        </c:otherwise>
+                    </c:choose>
+                </div>
+            </div>
+        </section>
+
+        <%--GO BACK--%>
+
+        <section>
+            <div class="well">
+                <form action="studentpanel.mvc"  method="get">
+                    <button type="submit" class="btn btn-primary">返回学生面板</button>
+                </form>
+            </div>
+        </section>
 
 </div>
-
-
-
-
 
 <script src="bootstrap/jquery-2.2.1.min.js"></script>
 <script src="bootstrap/bootstrap.file-input.js"></script>

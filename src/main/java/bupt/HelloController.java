@@ -59,10 +59,33 @@ public class HelloController {
     public ModelAndView delpoy(HttpServletRequest request){
         String name = (String) request.getSession().getAttribute("username");
         List<Student> list=studentService.getStudent(name);
+        List<Team> teamList = teamService.getTeam(20);
+
         final Map<String, Object> model = new LinkedHashMap<String, Object>();
+
+        String filename = teamList.get(0).getFilename();
+        String IPaddress = teamList.get(0).getIpaddress();
+        String isDeployed = filename;
+
+        int checkFunction = teamList.get(0).getFunctiontest();
+        int checkFrontPage = teamList.get(0).getFrontpagetest();
+        int checkPerformance = teamList.get(0).getPerformancetest();
+        int checkCodeOne = teamList.get(0).getCodetestone();
+        int checkCodeTwo = teamList.get(0).getCodetestwo();
+        int checkDocument = teamList.get(0).getDocumentest();
+
         model.put("resultList", list);
-        model.put("userName", name);
-        return new ModelAndView("deploy",model);
+        model.put("isDeployed",isDeployed);
+        model.put("deployedFile",filename);
+        model.put("deployedIP",IPaddress);
+        model.put("checkFunction",checkFunction);
+        model.put("checkFrontPage",checkFrontPage);
+        model.put("checkDocument",checkDocument);
+        model.put("checkCodeOne",checkCodeOne);
+        model.put("checkCodeTwo",checkCodeTwo);
+        model.put("checkPerformance",checkPerformance);
+
+        return new ModelAndView("deploy#document",model);
     }
 
     @RequestMapping(value = "/score.mvc", method = RequestMethod.POST)
@@ -76,61 +99,268 @@ public class HelloController {
     }
 
     @RequestMapping(value = "/upload.mvc", method = RequestMethod.POST)
-<<<<<<< HEAD
-    public ModelAndView upload(@ModelAttribute()Team team,ModelMap modelMap, HttpServletRequest request){
+    public ModelAndView upload( HttpServletRequest request){
         String filename = request.getParameter("filename");
         String IPaddress = request.getParameter("IPaddress");
         String name = (String) request.getSession().getAttribute("username");
 
         List<Student> list=studentService.getStudent(name);
-
         List<Team> teamList = teamService.getTeam(20);
 
-        team.setTeamnumber(teamList.get(0).getTeamnumber());
-        team.setDeploytest(teamList.get(0).getDeploytest());
-        team.setFrontpagetest(teamList.get(0).getFrontpagetest());
-        team.setFunctiontest(teamList.get(0).getPerformancetest());
-        team.setCodetestone(teamList.get(0).getCodetestone());
-        team.setCodetestwo(teamList.get(0).getCodetestwo());
-        team.setDocumentest(teamList.get(0).getDocumentest());
+        Team team = teamService.listToTeam(teamList);
+
         team.setFilename(filename);
         team.setIpaddress(IPaddress);
 
-//        modelMap.addAttribute("teamnumber",teamList.get(0).getTeamnumber());
-//        modelMap.addAttribute("deploytest",teamList.get(0).getDeploytest());
-//        modelMap.addAttribute("frontpagetest",teamList.get(0).getFrontpagetest());
-//        modelMap.addAttribute("performancetest",teamList.get(0).getPerformancetest());
-//        modelMap.addAttribute("codetestone",teamList.get(0).getCodetestone());
-//        modelMap.addAttribute("codetestwo",teamList.get(0).getCodetestwo());
-//        modelMap.addAttribute("documentest",teamList.get(0).getDocumentest());
-//        modelMap.addAttribute("filename",filename);
-//        modelMap.addAttribute("ipaddress",IPaddress);
         teamService.update(team);
         //do deploy
 
 
         List<Team> teamListAgain = teamService.getTeam(20);
-=======
-    public ModelAndView upload(HttpServletRequest request){
-        String filename = request.getParameter("filename");
-        String IPaddress = request.getParameter("IPaddress");
-        String name = (String) request.getSession().getAttribute("username");
-        List<Student> list=studentService.getStudent(name);
-        //do deploy
-
->>>>>>> bfadc73d6e1bf849daec0c8753286f896fe147b8
         final Map<String, Object> model = new LinkedHashMap<String, Object>();
 
-        String isDeployed="success";
+        String isDeployed=teamListAgain.get(0).getFilename();
+        int checkFrontPage = teamListAgain.get(0).getFrontpagetest();
+        filename = teamListAgain.get(0).getFilename();
+        IPaddress = teamListAgain.get(0).getIpaddress();
+        int checkFunction = teamListAgain.get(0).getFunctiontest();
+        int checkPerformance = teamListAgain.get(0).getPerformancetest();
+        int checkCodeOne = teamListAgain.get(0).getCodetestone();
+        int checkCodeTwo = teamListAgain.get(0).getCodetestwo();
+        int checkDocument = teamListAgain.get(0).getDocumentest();
 
+        model.put("checkDocument",checkDocument);
+        model.put("checkCodeOne",checkCodeOne);
+        model.put("checkCodeTwo",checkCodeTwo);
+        model.put("checkPerformance",checkPerformance);
+        model.put("checkFunction",checkFunction);
         model.put("isDeployed",isDeployed);
-<<<<<<< HEAD
-        model.put("resultList", teamListAgain);
-=======
-        model.put("resultList", list);
->>>>>>> bfadc73d6e1bf849daec0c8753286f896fe147b8
+        model.put("resultList",list);
+        model.put("deployedFile",filename);
+        model.put("deployedIP",IPaddress);
+
+        model.put("checkFrontPage",checkFrontPage);
 
         return new ModelAndView("deploy",model);
+    }
+
+    @RequestMapping(value = "/frontpage.mvc", method = RequestMethod.POST)
+    public ModelAndView frontpage( HttpServletRequest request) {
+        String name = (String) request.getSession().getAttribute("username");
+        List<Student> list=studentService.getStudent(name);
+
+        List<Team> teamList = teamService.getTeam(20);
+
+        Team team = teamService.listToTeam(teamList);
+
+        //do frontpage examination
+
+        team.setFrontpagetest(-2);
+
+        teamService.update(team);
+
+        List<Team> teamListAgain = teamService.getTeam(20);
+        final Map<String, Object> model = new LinkedHashMap<String, Object>();
+
+
+        String isDeployed=teamListAgain.get(0).getFilename();
+        int checkFrontPage = teamListAgain.get(0).getFrontpagetest();
+        String filename = teamListAgain.get(0).getFilename();
+        String IPaddress = teamListAgain.get(0).getIpaddress();
+        int checkFunction = teamListAgain.get(0).getFunctiontest();
+        int checkPerformance = teamListAgain.get(0).getPerformancetest();
+        int checkCodeOne = teamListAgain.get(0).getCodetestone();
+        int checkCodeTwo = teamListAgain.get(0).getCodetestwo();
+        int checkDocument = teamListAgain.get(0).getDocumentest();
+
+        model.put("checkDocument",checkDocument);
+        model.put("checkCodeOne",checkCodeOne);
+        model.put("checkCodeTwo",checkCodeTwo);
+        model.put("checkPerformance",checkPerformance);
+        model.put("checkFunction",checkFunction);
+        model.put("deployedFile",filename);
+        model.put("deployedIP",IPaddress);
+        model.put("isDeployed",isDeployed);
+        model.put("resultList",list);
+        model.put("checkFrontPage",checkFrontPage);
+
+        return new ModelAndView("deploy",model);
+    }
+
+    @RequestMapping(value = "/function.mvc", method = RequestMethod.POST)
+    public ModelAndView function( HttpServletRequest request) {
+        String name = (String) request.getSession().getAttribute("username");
+        List<Student> list=studentService.getStudent(name);
+
+        List<Team> teamList = teamService.getTeam(20);
+
+        Team team = teamService.listToTeam(teamList);
+
+        //do function examination
+
+        team.setFunctiontest(-2);
+
+        teamService.update(team);
+
+        List<Team> teamListAgain = teamService.getTeam(20);
+        final Map<String, Object> model = new LinkedHashMap<String, Object>();
+
+
+        String isDeployed=teamListAgain.get(0).getFilename();
+        int checkFrontPage = teamListAgain.get(0).getFrontpagetest();
+        String filename = teamListAgain.get(0).getFilename();
+        String IPaddress = teamListAgain.get(0).getIpaddress();
+        int checkFunction = teamListAgain.get(0).getFunctiontest();
+        int checkPerformance = teamListAgain.get(0).getPerformancetest();
+        int checkCodeOne = teamListAgain.get(0).getCodetestone();
+        int checkCodeTwo = teamListAgain.get(0).getCodetestwo();
+        int checkDocument = teamListAgain.get(0).getDocumentest();
+
+        model.put("checkDocument",checkDocument);
+        model.put("checkCodeOne",checkCodeOne);
+        model.put("checkCodeTwo",checkCodeTwo);
+        model.put("checkPerformance",checkPerformance);
+        model.put("checkFunction",checkFunction);
+        model.put("deployedFile",filename);
+        model.put("deployedIP",IPaddress);
+        model.put("isDeployed",isDeployed);
+        model.put("resultList",list);
+        model.put("checkFrontPage",checkFrontPage);
+
+        return new ModelAndView("deploy",model);
+    }
+
+    @RequestMapping(value = "/performance.mvc", method = RequestMethod.POST)
+    public ModelAndView performance( HttpServletRequest request) {
+        String name = (String) request.getSession().getAttribute("username");
+        List<Student> list=studentService.getStudent(name);
+
+        List<Team> teamList = teamService.getTeam(20);
+
+        Team team = teamService.listToTeam(teamList);
+
+        //do performance examination
+
+        team.setPerformancetest(-2);
+
+        teamService.update(team);
+
+        List<Team> teamListAgain = teamService.getTeam(20);
+        final Map<String, Object> model = new LinkedHashMap<String, Object>();
+
+
+        String isDeployed=teamListAgain.get(0).getFilename();
+        int checkFrontPage = teamListAgain.get(0).getFrontpagetest();
+        String filename = teamListAgain.get(0).getFilename();
+        String IPaddress = teamListAgain.get(0).getIpaddress();
+        int checkFunction = teamListAgain.get(0).getFunctiontest();
+        int checkPerformance = teamListAgain.get(0).getPerformancetest();
+        int checkCodeOne = teamListAgain.get(0).getCodetestone();
+        int checkCodeTwo = teamListAgain.get(0).getCodetestwo();
+        int checkDocument = teamListAgain.get(0).getDocumentest();
+
+        model.put("checkDocument",checkDocument);
+        model.put("checkCodeOne",checkCodeOne);
+        model.put("checkCodeTwo",checkCodeTwo);
+        model.put("checkPerformance",checkPerformance);
+        model.put("checkFunction",checkFunction);
+        model.put("deployedFile",filename);
+        model.put("deployedIP",IPaddress);
+        model.put("isDeployed",isDeployed);
+        model.put("resultList",list);
+        model.put("checkFrontPage",checkFrontPage);
+
+        return new ModelAndView("deploy",model);
+
+    }
+
+    @RequestMapping(value = "/code.mvc", method = RequestMethod.POST)
+    public ModelAndView code( HttpServletRequest request) {
+        String name = (String) request.getSession().getAttribute("username");
+        List<Student> list=studentService.getStudent(name);
+
+        List<Team> teamList = teamService.getTeam(20);
+
+        Team team = teamService.listToTeam(teamList);
+
+        //do performance examination
+
+        team.setCodetestone(-2);
+        team.setCodetestwo(-2);
+
+        teamService.update(team);
+
+        List<Team> teamListAgain = teamService.getTeam(20);
+        final Map<String, Object> model = new LinkedHashMap<String, Object>();
+
+
+        String isDeployed=teamListAgain.get(0).getFilename();
+        int checkFrontPage = teamListAgain.get(0).getFrontpagetest();
+        String filename = teamListAgain.get(0).getFilename();
+        String IPaddress = teamListAgain.get(0).getIpaddress();
+        int checkFunction = teamListAgain.get(0).getFunctiontest();
+        int checkPerformance = teamListAgain.get(0).getPerformancetest();
+        int checkCodeOne = teamListAgain.get(0).getCodetestone();
+        int checkCodeTwo = teamListAgain.get(0).getCodetestwo();
+        int checkDocument = teamListAgain.get(0).getDocumentest();
+
+        model.put("checkDocument",checkDocument);
+        model.put("checkCodeOne",checkCodeOne);
+        model.put("checkCodeTwo",checkCodeTwo);
+        model.put("checkPerformance",checkPerformance);
+        model.put("checkFunction",checkFunction);
+        model.put("deployedFile",filename);
+        model.put("deployedIP",IPaddress);
+        model.put("isDeployed",isDeployed);
+        model.put("resultList",list);
+        model.put("checkFrontPage",checkFrontPage);
+
+        return new ModelAndView("deploy",model);
+
+    }
+
+    @RequestMapping(value = "/document.mvc", method = RequestMethod.POST)
+    public ModelAndView document( HttpServletRequest request) {
+        String name = (String) request.getSession().getAttribute("username");
+        List<Student> list=studentService.getStudent(name);
+
+        List<Team> teamList = teamService.getTeam(20);
+
+        Team team = teamService.listToTeam(teamList);
+
+        //do performance examination
+
+        team.setDocumentest(-2);
+
+        teamService.update(team);
+
+        List<Team> teamListAgain = teamService.getTeam(20);
+        final Map<String, Object> model = new LinkedHashMap<String, Object>();
+
+
+        String isDeployed=teamListAgain.get(0).getFilename();
+        int checkFrontPage = teamListAgain.get(0).getFrontpagetest();
+        String filename = teamListAgain.get(0).getFilename();
+        String IPaddress = teamListAgain.get(0).getIpaddress();
+        int checkFunction = teamListAgain.get(0).getFunctiontest();
+        int checkPerformance = teamListAgain.get(0).getPerformancetest();
+        int checkCodeOne = teamListAgain.get(0).getCodetestone();
+        int checkCodeTwo = teamListAgain.get(0).getCodetestwo();
+        int checkDocument = teamListAgain.get(0).getDocumentest();
+
+        model.put("checkDocument",checkDocument);
+        model.put("checkCodeOne",checkCodeOne);
+        model.put("checkCodeTwo",checkCodeTwo);
+        model.put("checkPerformance",checkPerformance);
+        model.put("checkFunction",checkFunction);
+        model.put("deployedFile",filename);
+        model.put("deployedIP",IPaddress);
+        model.put("isDeployed",isDeployed);
+        model.put("resultList",list);
+        model.put("checkFrontPage",checkFrontPage);
+
+        return new ModelAndView("deploy",model);
+
     }
 
 }

@@ -88,7 +88,7 @@
         <columns>username</columns>
         <underlying-index>username_UNIQUE</underlying-index>
       </key>
-      <column id="26" parent="5" name="teamnumber">
+      <column id="26" parent="5" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
@@ -129,12 +129,14 @@
       </column>
       <column id="34" parent="5" name="filename">
         <data-type>varchar(255)</data-type>
+        <default-expression>&apos;in:valid&apos;</default-expression>
       </column>
       <column id="35" parent="5" name="ipaddress">
         <data-type>varchar(255)</data-type>
+        <default-expression>&apos;in:valid&apos;</default-expression>
       </column>
       <key id="36" parent="5" name="PRIMARY">
-        <columns>teamnumber</columns>
+        <columns>id</columns>
         <primary>1</primary>
       </key>
     </database-model>

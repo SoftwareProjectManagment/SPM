@@ -13,8 +13,8 @@ public class Team {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
 
-    private int teamnumber;
     private int deploytest;
     private int frontpagetest;
     private int functiontest;
@@ -39,12 +39,12 @@ public class Team {
         this.documentest = documentest;
     }
 
-    public int getTeamnumber() {
-        return teamnumber;
+    public int getId() {
+        return id;
     }
 
-    public void setTeamnumber(int teamnumber) {
-        this.teamnumber = teamnumber;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public int getDeploytest() {
