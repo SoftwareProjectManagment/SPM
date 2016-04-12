@@ -61,7 +61,6 @@ public class Student {
         return id;
     }
 
-    @Column(name="id")
     public void setId(int id) {
         this.id = id;
     }
@@ -71,7 +70,6 @@ public class Student {
         return name;
     }
 
-    @Column(name="name")
     public void setName(String name) {
         this.name = name;
     }
@@ -81,7 +79,6 @@ public class Student {
         return score;
     }
 
-    @Column(name="score")
     public void setScore(int score) {
         this.score = score;
     }
@@ -91,7 +88,6 @@ public class Student {
         return groupnum;
     }
 
-    @Column(name="groupnum")
     public void setGroupnum(int groupnum) {
         this.groupnum = groupnum;
     }
@@ -101,7 +97,6 @@ public class Student {
         return deployscore;
     }
 
-    @Column(name="deployscore")
     public void setDeployscore(int deployscore) {
         this.deployscore = deployscore;
     }
@@ -111,7 +106,6 @@ public class Student {
         return frontpagescore;
     }
 
-    @Column(name="frontpagescore")
     public void setFrontpagescore(int frontpagescore) {
         this.frontpagescore = frontpagescore;
     }
@@ -121,7 +115,6 @@ public class Student {
         return functionscore;
     }
 
-    @Column(name="functionscore")
     public void setFunctionscore(int functionscore) {
         this.functionscore = functionscore;
     }
@@ -131,7 +124,6 @@ public class Student {
         return performancescore;
     }
 
-    @Column(name="performancescore")
     public void setPerformancescore(int performancescore) {
         this.performancescore = performancescore;
     }
@@ -141,7 +133,6 @@ public class Student {
         return codescore;
     }
 
-    @Column(name="codescore")
     public void setCodescore(int codescore) {
         this.codescore = codescore;
     }
@@ -151,7 +142,6 @@ public class Student {
         return documentscore;
     }
 
-    @Column(name="documentscore")
     public void setDocumentscore(int documentscore) {
         this.documentscore = documentscore;
     }
