@@ -65,9 +65,11 @@
     <bean id="studentDao" class="main.java.bupt.dao.StudentDaoImpl"/>
     <bean id="teamDao" class="main.java.bupt.dao.TeamDaoImpl"/>
     <bean id="teacherDao" class="main.java.bupt.dao.TeacherDaoImpl"/>
+    <bean id="userDao" class="main.java.bupt.dao.UserDaoImpl"/>
 
     <bean id="studentService" class="main.java.bupt.service.StudentServiceImpl"/>
     <bean id="teamService" class="main.java.bupt.service.TeamServiceImpl"/>
     <bean id="teacherService" class="main.java.bupt.service.TeacherServiceImpl"/>
+    <bean id="userService" class="main.java.bupt.service.UserServiceImpl"/>
 
 </beans>

@@ -1,9 +1,6 @@
 package main.java.bupt.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by Martin on 2015/12/20.
@@ -11,15 +8,15 @@ import javax.persistence.Id;
 @Entity
 public class Student {
 
-    @Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
+
+
     private int id;
 
     private String name;
 
     private int score;
 
-    private int group;
+    private int groupnum;
 
     private int deployscore;
     private int frontpagescore;
@@ -28,10 +25,11 @@ public class Student {
     private int codescore;
     private int documentscore;
 
-    public Student(String name, int score, int group, int deployscore, int frontpagescore, int functionscore, int performancescore, int codescore, int documentscore) {
+    public Student(int id, String name, int score, int groupnum, int deployscore, int frontpagescore, int functionscore, int performancescore, int codescore, int documentscore) {
+        this.id = id;
         this.name = name;
         this.score = score;
-        this.group = group;
+        this.groupnum = groupnum;
         this.deployscore = deployscore;
         this.frontpagescore = frontpagescore;
         this.functionscore = functionscore;
@@ -40,85 +38,120 @@ public class Student {
         this.documentscore = documentscore;
     }
 
+    public Student(int id, String name, int groupnum){
+        this.id = id;
+        this.name = name;
+        this.score = -1;
+        this.groupnum = groupnum;
+        this.deployscore = -1;
+        this.frontpagescore = -1;
+        this.functionscore = -1;
+        this.performancescore = -1;
+        this.codescore = -1;
+        this.documentscore = -1;
+    }
+
     public Student() {
     }
 
+    @Id
+    //@GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="id")
     public int getId() {
         return id;
     }
 
+    @Column(name="id")
     public void setId(int id) {
         this.id = id;
     }
 
+    @Column(name="name")
     public String getName() {
         return name;
     }
 
+    @Column(name="name")
     public void setName(String name) {
         this.name = name;
     }
 
+    @Column(name="score")
     public int getScore() {
         return score;
     }
 
+    @Column(name="score")
     public void setScore(int score) {
         this.score = score;
     }
 
-    public int getGroup() {
-        return group;
+    @Column(name="groupnum")
+    public int getGroupnum() {
+        return groupnum;
     }
 
-    public void setGroup(int group) {
-        this.group = group;
+    @Column(name="groupnum")
+    public void setGroupnum(int groupnum) {
+        this.groupnum = groupnum;
     }
 
+    @Column(name="deployscore")
     public int getDeployscore() {
         return deployscore;
     }
 
+    @Column(name="deployscore")
     public void setDeployscore(int deployscore) {
         this.deployscore = deployscore;
     }
 
+    @Column(name="frontpagescore")
     public int getFrontpagescore() {
         return frontpagescore;
     }
 
+    @Column(name="frontpagescore")
     public void setFrontpagescore(int frontpagescore) {
         this.frontpagescore = frontpagescore;
     }
 
+    @Column(name="functionscore")
     public int getFunctionscore() {
         return functionscore;
     }
 
+    @Column(name="functionscore")
     public void setFunctionscore(int functionscore) {
         this.functionscore = functionscore;
     }
 
+    @Column(name="performancescore")
     public int getPerformancescore() {
         return performancescore;
     }
 
+    @Column(name="performancescore")
     public void setPerformancescore(int performancescore) {
         this.performancescore = performancescore;
     }
 
+    @Column(name="codescore")
     public int getCodescore() {
         return codescore;
     }
 
+    @Column(name="codescore")
     public void setCodescore(int codescore) {
         this.codescore = codescore;
     }
 
+    @Column(name="documentscore")
     public int getDocumentscore() {
         return documentscore;
     }
 
+    @Column(name="documentscore")
     public void setDocumentscore(int documentscore) {
         this.documentscore = documentscore;
     }

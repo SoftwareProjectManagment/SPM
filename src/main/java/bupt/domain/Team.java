@@ -1,9 +1,6 @@
 package main.java.bupt.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by Java on 2016/3/11.
@@ -11,7 +8,7 @@ import javax.persistence.Id;
 @Entity
 public class Team {
 
-    @Id
+
     //@GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
@@ -65,6 +62,8 @@ public class Team {
         this.memberSix = menberSix;
     }
 
+    @Id
+    @Column(name="id")
     public int getId() {
         return id;
     }
@@ -73,6 +72,7 @@ public class Team {
         this.id = id;
     }
 
+    @Column(name="deploytest")
     public int getDeploytest() {
         return deploytest;
     }
@@ -81,6 +81,7 @@ public class Team {
         this.deploytest = deploytest;
     }
 
+    @Column(name="frontpagetest")
     public int getFrontpagetest() {
         return frontpagetest;
     }
@@ -89,6 +90,7 @@ public class Team {
         this.frontpagetest = frontpagetest;
     }
 
+    @Column(name="functiontest")
     public int getFunctiontest() {
         return functiontest;
     }
@@ -97,6 +99,7 @@ public class Team {
         this.functiontest = functiontest;
     }
 
+    @Column(name="performancetest")
     public int getPerformancetest() {
         return performancetest;
     }
@@ -105,6 +108,7 @@ public class Team {
         this.performancetest = performancetest;
     }
 
+    @Column(name="codetestone")
     public int getCodetestone() {
         return codetestone;
     }
@@ -113,6 +117,7 @@ public class Team {
         this.codetestone = codetestone;
     }
 
+    @Column(name="codetestwo")
     public int getCodetestwo() {
         return codetestwo;
     }
@@ -121,6 +126,7 @@ public class Team {
         this.codetestwo = codetestwo;
     }
 
+    @Column(name="documentest")
     public int getDocumentest() {
         return documentest;
     }
@@ -129,6 +135,7 @@ public class Team {
         this.documentest = documentest;
     }
 
+    @Column(name="filename")
     public String getFilename() {
         return filename;
     }
@@ -137,6 +144,7 @@ public class Team {
         this.filename = filename;
     }
 
+    @Column(name="ipaddress")
     public String getIpaddress() {
         return ipaddress;
     }
@@ -145,6 +153,7 @@ public class Team {
         this.ipaddress = ipaddress;
     }
 
+    @Column(name="memberOne")
     public int getMemberOne() {
         return memberOne;
     }
@@ -153,6 +162,7 @@ public class Team {
         this.memberOne = memberOne;
     }
 
+    @Column(name="memberTwo")
     public int getMemberTwo() {
         return memberTwo;
     }
@@ -161,6 +171,7 @@ public class Team {
         this.memberTwo = memberTwo;
     }
 
+    @Column(name="memberThree")
     public int getMemberThree() {
         return memberThree;
     }
@@ -169,6 +180,7 @@ public class Team {
         this.memberThree = memberThree;
     }
 
+    @Column(name="memberFour")
     public int getMemberFour() {
         return memberFour;
     }
@@ -177,6 +189,7 @@ public class Team {
         this.memberFour = memberFour;
     }
 
+    @Column(name="memberFive")
     public int getMemberFive() {
         return memberFive;
     }
@@ -185,6 +198,7 @@ public class Team {
         this.memberFive = memberFive;
     }
 
+    @Column(name="memberSix")
     public int getMemberSix() {
         return memberSix;
     }
@@ -193,6 +207,7 @@ public class Team {
         this.memberSix = memberSix;
     }
 
+    @Column(name="pcaseOne")
     public int getPcaseOne() {
         return pcaseOne;
     }
@@ -201,6 +216,7 @@ public class Team {
         this.pcaseOne = pcaseOne;
     }
 
+    @Column(name="pcaseTwo")
     public int getPcaseTwo() {
         return pcaseTwo;
     }
@@ -209,6 +225,7 @@ public class Team {
         this.pcaseTwo = pcaseTwo;
     }
 
+    @Column(name="pcaseThree")
     public int getPcaseThree() {
         return pcaseThree;
     }
@@ -217,6 +234,7 @@ public class Team {
         this.pcaseThree = pcaseThree;
     }
 
+    @Column(name="pcaseFour")
     public int getPcaseFour() {
         return pcaseFour;
     }
@@ -225,6 +243,7 @@ public class Team {
         this.pcaseFour = pcaseFour;
     }
 
+    @Column(name="pcaseFive")
     public int getPcaseFive() {
         return pcaseFive;
     }
@@ -233,6 +252,7 @@ public class Team {
         this.pcaseFive = pcaseFive;
     }
 
+    @Column(name="fcaseOne")
     public int getFcaseOne() {
         return fcaseOne;
     }
@@ -241,6 +261,7 @@ public class Team {
         this.fcaseOne = fcaseOne;
     }
 
+    @Column(name="fcaseTwo")
     public int getFcaseTwo() {
         return fcaseTwo;
     }
@@ -249,6 +270,7 @@ public class Team {
         this.fcaseTwo = fcaseTwo;
     }
 
+    @Column(name="fcaseThree")
     public int getFcaseThree() {
         return fcaseThree;
     }
@@ -257,6 +279,7 @@ public class Team {
         this.fcaseThree = fcaseThree;
     }
 
+    @Column(name="fcaseFour")
     public int getFcaseFour() {
         return fcaseFour;
     }
@@ -265,6 +288,7 @@ public class Team {
         this.fcaseFour = fcaseFour;
     }
 
+    @Column(name="fcaseFive")
     public int getFcaseFive() {
         return fcaseFive;
     }

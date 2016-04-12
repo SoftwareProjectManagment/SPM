@@ -1,6 +1,7 @@
 package main.java.bupt.service;
 
 import main.java.bupt.dao.TeamDao;
+import main.java.bupt.domain.Student;
 import main.java.bupt.domain.Team;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -45,4 +46,24 @@ public class TeamServiceImpl implements TeamService{
     public Team listToTeam(List<Team> teamList){
         return teamDao.listToTeam(teamList);
     }
+
+    @Override
+    @Transactional
+    public String updateTeamMember(int teamNumber, Student student) {
+        return teamDao.updateTeamMember(teamNumber,student);
+    }
+
+    @Override
+    @Transactional
+    public int digitToNum(int teamNum, int digit) {
+        return teamDao.digitToNum(teamNum,digit);
+    }
+
+    @Override
+    @Transactional
+    public String deleteStudent(int teamNum, int studentNum) {
+        return teamDao.deleteStudent(teamNum,studentNum);
+    }
+
+
 }

@@ -64,13 +64,27 @@
 </div>
 <hr>
 
+<Script Language="JavaScript">
+    function modify()
+    {
+        document.form1.action="modifyStudentInfo.mvc";
+        document.form1.submit();
+    }
+
+    function delet()
+    {
+        document.form1.action="deleteStudentInfo.mvc";
+        document.form1.submit();
+    }
+</Script>
+
 <div class="container">
     <div class="jumbotron">
         <h1>小组信息面板</h1>
         <hr/>
         <c:choose>
             <c:when test="${empty resultList}">
-                <form action="" method="post">
+                <form name="form1" action="" method="post">
                     <div class="panel panel-default">
                         <!-- Default panel contents -->
                         <div class="panel-heading">组员信息</div>
@@ -100,7 +114,7 @@
                 </form>
             </c:when>
             <c:otherwise>
-                <form action="" method="post">
+                <form name="form1" action="" method="post">
                     <div class="panel panel-default">
                         <!-- Default panel contents -->
                         <div class="panel-heading">小组概要</div>
@@ -110,65 +124,96 @@
                             <tr><th>学号</th><th>姓名</th><th>系统部署</th><th>首页&链接</th><th>功能测试</th><th>性能测试</th><th>代码检测</th><th>文档检测</th><th>选择删除</th></tr>
                             </thead>
                             <tbody>
+                            <c:set var="ordinal" value="1"/>
                             <c:forEach var="student" items="${studentList}">
                                 <tr>
-                                    <th scope="row">${student.id}</th>
-                                    <td>${student.name}</td>
+                                    <th scope="row">
+                                        <input class="form-control" name="StudentNumber${ordinal}" type="text" value="${student.id}" style="width:120px;"/>
+                                    </th>
+                                    <td>
+                                        <input class="form-control" name="StudentName${ordinal}" type="text" value="${student.name}" readonly="readonly" style="width:70px;"/>
+                                    </td>
                                     <c:choose>
                                         <c:when test="${student.deployscore < 0}">
-                                            <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
+                                            <td>
+                                                <input class="form-control" name="deployscore${ordinal}" type="text" placeholder="未打分" style="width:80px;"/>
+                                            </td>
                                         </c:when>
                                         <c:otherwise>
-                                            <td>${student.deployscore}</td>
+                                            <td>
+                                                <input class="form-control" name="deployscore${ordinal}" type="text" value="${student.deployscore}" style="width:80px;"/>
+                                            </td>
                                         </c:otherwise>
                                     </c:choose>
                                     <c:choose>
                                         <c:when test="${student.frontpagescore < 0}">
-                                            <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
+                                            <td>
+                                                <input class="form-control" name="frontpagescore${ordinal}" type="text" placeholder="未打分" style="width:80px;"/>
+                                            </td>
                                         </c:when>
                                         <c:otherwise>
-                                            <td>${student.frontpagescore}</td>
+                                            <td>
+                                                <input class="form-control" name="frontpagescore${ordinal}" type="text" value="${student.frontpagescore}" style="width:80px;"/>
+                                            </td>
                                         </c:otherwise>
                                     </c:choose>
                                     <c:choose>
                                         <c:when test="${student.functionscore < 0}">
-                                            <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
+                                            <td>
+                                                <input class="form-control" name="functionscore${ordinal}" type="text" placeholder="未打分" style="width:80px;"/>
+                                            </td>
                                         </c:when>
                                         <c:otherwise>
-                                            <td>${student.functionscore}</td>
+                                            <td>
+                                                <input class="form-control" name="functionscore${ordinal}" type="text" value="${student.functionscore}" style="width:80px;"/>
+                                            </td>
                                         </c:otherwise>
                                     </c:choose>
                                     <c:choose>
                                         <c:when test="${student.performancescore < 0}">
-                                            <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
+                                            <td>
+                                                <input class="form-control" name="performancescore${ordinal}" type="text" placeholder="未打分" style="width:80px;"/>
+                                            </td>
                                         </c:when>
                                         <c:otherwise>
-                                            <td>${student.performancescore}</td>
+                                            <td>
+                                                <input class="form-control" name="performancescore${ordinal}" type="text" value="${student.performancescore}" style="width:80px;"/>
+                                            </td>
                                         </c:otherwise>
                                     </c:choose>
                                     <c:choose>
                                         <c:when test="${student.codescore < 0}">
-                                            <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
+                                            <td>
+                                                <input class="form-control" name="codescore${ordinal}" type="text" placeholder="未打分" style="width:80px;"/>
+                                            </td>
                                         </c:when>
                                         <c:otherwise>
-                                            <td>${student.codescore}</td>
+                                            <td>
+                                                <input class="form-control" name="codescore${ordinal}" type="text" value="${student.codescore}" style="width:80px;"/>
+                                            </td>
                                         </c:otherwise>
                                     </c:choose>
                                     <c:choose>
                                         <c:when test="${student.documentscore < 0}">
-                                            <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
+                                            <td>
+                                                <input class="form-control" name="documentscore${ordinal}" type="text" placeholder="未打分" style="width:80px;"/>
+                                            </td>
                                         </c:when>
                                         <c:otherwise>
-                                            <td>${student.documentscore}</td>
+                                            <td>
+                                                <input class="form-control" name="documentscore${ordinal}" type="text" value="${student.documentscore}" style="width:80px;"/>
+                                            </td>
                                         </c:otherwise>
                                     </c:choose>
-                                    <td><input name="chooseStudent" type="radio"/></td>
+                                    <td><input name="chooseStudent${ordinal}" type="radio" value="${ordinal}"/></td>
                                 </tr>
+                                <c:set var="ordinal" value="${ordinal+1}"/>
                             </c:forEach>
                             </tbody>
                         </table>
                     </div>
-                    <button type="submit" class="btn btn-primary">提交小组信息修改</button>
+                    <button type="button" class="btn btn-primary" onclick="modify()">修改学生成绩</button>
+                    <button type="button" class="btn btn-primary" onclick="delet()">删除学生</button>
                 </form>
             </c:otherwise>
         </c:choose>
@@ -176,6 +221,11 @@
         <form action="addStudentInfo.mvc" class="form-inline" role="form" method="post">
             <div class="form-group">
                 <h2>添加组员信息</h2>
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon0">组号</span>
+                    <input class="form-control" name="selectTeam" type="text" value="${teamSelected}" readonly="readonly"/>
+                </div>
+
                 <div class="input-group">
                     <span class="input-group-addon" id="basic-addon1">学号</span>
                     <input class="form-control" name="addStudentNumber" type="text" placeholder="Number" describedby="basic-addon1" value="20000"/>
@@ -189,5 +239,8 @@
         </form>
     </div>
 </div>
+
+
+
 </body>
 </html>

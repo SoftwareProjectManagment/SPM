@@ -72,11 +72,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="Hibernate 4.2.2-4.2.2" level="project" />
-    <orderEntry type="library" name="Spring-4.1.6.RELEASE" level="project" />
-    <orderEntry type="library" name="Struts 2-2.3.20.1" level="project" />
-    <orderEntry type="library" name="Spring MVC-4.1.6.RELEASE" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-5.1.30-bin" level="application" />
     <orderEntry type="library" name="javaee-api-7.0" level="application" />
     <orderEntry type="library" name="javax.servlet-api" level="application" />
     <orderEntry type="module-library">
@@ -152,5 +147,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="library" name="mysql-connector-java-5.1.25-bin" level="application" />
   </component>
 </module>

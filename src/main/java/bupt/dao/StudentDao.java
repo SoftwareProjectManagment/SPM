@@ -1,6 +1,7 @@
 package main.java.bupt.dao;
 
 import main.java.bupt.domain.Student;
+import main.java.bupt.domain.Team;
 
 import java.util.List;
 
@@ -16,4 +17,13 @@ public interface StudentDao {
     public List<Student> getStudent(int studentNumber);
 
     public Student listToStudent(List<Student> studentList);
+
+    public String isStudentExist(Student student);
+
+    public String isStudentExist(int studentNum);
+
+    public List<Student> getExistStudent(Team team);
+
+    public String deleteTeamStudent(int studentNum);
+
 }
