@@ -27,9 +27,10 @@
     </bean>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/app/"/>
+        <property name="prefix" value="/WEB-INF/"/>
         <property name="suffix" value=".jsp"/>
         <property name="order" value="2"/>
+        <property name="viewNames" value="admin*"/>
     </bean>
 
     <!-- 数据库映射 -->

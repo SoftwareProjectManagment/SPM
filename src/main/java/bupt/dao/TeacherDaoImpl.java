@@ -31,6 +31,7 @@ public class TeacherDaoImpl implements TeacherDao {
 
     @Override
     public void update(Teacher teacher) {
+        sessionFactory.getCurrentSession().clear();
         sessionFactory.getCurrentSession().saveOrUpdate(teacher);
     }
 
