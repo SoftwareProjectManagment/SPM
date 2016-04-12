@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -90,8 +91,6 @@ public class HelloController {
 
         return new ModelAndView("student/deploy",model);
     }
-
-
 
     @RequestMapping(value = "/upload.mvc", method = RequestMethod.POST)
     public ModelAndView upload( HttpServletRequest request){
@@ -368,27 +367,134 @@ public class HelloController {
         final Map<String, Object> model = new LinkedHashMap<String, Object>();
         model.put("resultList", list);
         model.put("userName", name);
-        return new ModelAndView("score",model);
+        return new ModelAndView("student/score",model);
     }
 
     @RequestMapping(value = "/teacherpanel.mvc", method = RequestMethod.GET)
     public ModelAndView teacherpanel(HttpServletRequest request){
-        int teacherID = (int) request.getSession().getAttribute("userID");
+        int teacherID = 0;
+        try {
+            teacherID = (int) request.getSession().getAttribute("userID");
+        }catch (Exception e){
+            return new ModelAndView("teacher/fail");
+        }
         //List<Student> list=studentService.getStudent(name);
+        List<Team> teamList = null;
+        for (int i=1;i<=22;i++){
+            List<Team> tempTeamList = teamService.getTeam(i);
+            if (!tempTeamList.isEmpty()){
+                Team tempTeam = teamService.listToTeam(tempTeamList);
+                if (teamList == null){
+                    teamList = tempTeamList;
+                }
+                else{
+                    teamList.add(tempTeam);
+                }
+            }
+        }
+        if (teamList == null){
+            teamList = teamService.getTeam(0);
+        }
         List<Teacher> list = teacherService.getTeacher(teacherID);
         final Map<String, Object> model = new LinkedHashMap<String, Object>();
         model.put("resultList", list);
         model.put("teacherID", teacherID);
+        model.put("teamList",teamList);
         return new ModelAndView("teacher/teacherpanel",model);
     }
 
     @RequestMapping(value = "/enroll.mvc", method = RequestMethod.POST)
     public ModelAndView enroll(HttpServletRequest request){
-        int teacherID = (int) request.getSession().getAttribute("userID");
+        int teacherID = 0;
+        try {
+            teacherID = (int) request.getSession().getAttribute("userID");
+        }catch (Exception e){
+            return new ModelAndView("teacher/fail");
+        }
         //List<Student> list=studentService.getStudent(name);
+        ArrayList<Integer> noRegisterList = new ArrayList<>();
+        for (int i=1;i<=22;i++){
+            List<Team> tempTeamList = teamService.getTeam(i);
+            if (tempTeamList.isEmpty()){
+                noRegisterList.add(i);
+            }
+        }
         List<Teacher> list = teacherService.getTeacher(teacherID);
         final Map<String, Object> model = new LinkedHashMap<String, Object>();
         model.put("resultList", list);
+        model.put("noRegisterList",noRegisterList);
+        model.put("teacherID", teacherID);
+        return new ModelAndView("teacher/enroll",model);
+    }
+
+    @RequestMapping(value = "/enrollFinish.mvc", method = RequestMethod.POST)
+    public ModelAndView enrollFinish(HttpServletRequest request){
+        int studentOne,studentTwo,studentThree,studentFour,studentFive,studentSix;
+
+        try {
+            studentOne = Integer.parseInt(request.getParameter("numberOne"));
+        }catch (Exception e){
+            studentOne=-1;
+        }
+        try {
+            studentTwo = Integer.parseInt(request.getParameter("numberTwo"));
+        }catch (Exception e){
+            studentTwo=-1;
+        }
+        try {
+            studentThree = Integer.parseInt(request.getParameter("numberThree"));
+        }catch (Exception e){
+            studentThree=-1;
+        }
+        try {
+            studentFour = Integer.parseInt(request.getParameter("numberFour"));
+        }catch (Exception e){
+            studentFour=-1;
+        }
+        try {
+            studentFive = Integer.parseInt(request.getParameter("numberFive"));
+        }catch (Exception e){
+            studentFive=-1;
+        }
+        try {
+            studentSix = Integer.parseInt(request.getParameter("numberSix"));
+        }catch (Exception e){
+            studentSix=-1;
+        }
+
+        int teamNumber;
+        try {
+            teamNumber = Integer.parseInt(request.getParameter("teamNumber"));
+        }catch (Exception e){
+            teamNumber=-1;
+            return new ModelAndView("teacher/teacherpanel");
+        }
+
+        if (teamNumber<1 || teamNumber>22){
+            return new ModelAndView("teacher/teacherpanel");
+        }
+
+        Team team = new Team(teamNumber,-1,-1,-1,-1,-1,-1,-1,"in:valid","in:valid",studentOne,studentTwo,studentThree,studentFour,studentFive,studentSix);
+        teamService.insert(team);
+
+        int teacherID = 0;
+        try {
+            teacherID = (int) request.getSession().getAttribute("userID");
+        }catch (Exception e){
+            return new ModelAndView("teacher/fail");
+        }
+        //List<Student> list=studentService.getStudent(name);
+        ArrayList<Integer> noRegisterList = new ArrayList<>();
+        for (int i=1;i<=22;i++){
+            List<Team> tempTeamList = teamService.getTeam(i);
+            if (tempTeamList.isEmpty()){
+                noRegisterList.add(i);
+            }
+        }
+        List<Teacher> list = teacherService.getTeacher(teacherID);
+        final Map<String, Object> model = new LinkedHashMap<String, Object>();
+        model.put("resultList", list);
+        model.put("noRegisterList",noRegisterList);
         model.put("teacherID", teacherID);
         return new ModelAndView("teacher/enroll",model);
     }

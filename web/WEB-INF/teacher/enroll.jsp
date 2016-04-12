@@ -53,5 +53,104 @@
         </div>
     </nav>
 </header>
+
+<div class="jumbotron">
+    <div class="container text-center">
+        <h1>欢迎来到小组信息录入界面</h1>
+        <button type="button" class="btn btn-primary btn-lg" href="#deploy">
+            开始录入小组信息
+        </button>
+    </div>
+</div>
+    <hr>
+<div class="container text-center">
+<div class="well">
+    <form action="enrollFinish.mvc" method="post">
+        <div class="row">
+            <div class="col-sm-4">
+
+            </div>
+            <div class="col-sm-2">
+                <h4>小组编号</h4>
+            </div>
+            <div class="col-sm-2">
+                <label for="team-number" class="sr-only">teamNumber</label>
+                <select class="form-control" id="team-number" name="teamNumber">
+                    <c:forEach var="noRegister" items="${noRegisterList}">
+                        <option value=${noRegister}>${noRegister}</option>
+                    </c:forEach>
+                </select>
+            </div>
+        </div>
+        <h3>下面填写组员信息，第一个人是组长</h3>
+        <div class="row">
+            <div class="col-sm-5">
+                </div>
+            <div class="col-sm-2">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon1">学号</span>
+                    <input type="text" class="form-control" aria-describedby="basic-addon1" name="numberOne">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+            </div>
+            <div class="col-sm-2">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon3">学号</span>
+                    <input type="text" class="form-control" aria-describedby="basic-addon1" name="numberTwo">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+            </div>
+            <div class="col-sm-2">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon5">学号</span>
+                    <input type="text" class="form-control" aria-describedby="basic-addon1" name="numberThree">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+            </div>
+            <div class="col-sm-2">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon7">学号</span>
+                    <input type="text" class="form-control" aria-describedby="basic-addon1" name="numberFour">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+            </div>
+            <div class="col-sm-2">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon9">学号</span>
+                    <input type="text" class="form-control" aria-describedby="basic-addon1" name="numberFive">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+            </div>
+            <div class="col-sm-2">
+                <div class="input-group">
+                    <span class="input-group-addon" id="basic-addon11">学号</span>
+                    <input type="text" class="form-control" aria-describedby="basic-addon1" name="numberSix">
+                </div>
+            </div>
+        </div>
+        <br>
+        <button type="submit" class="btn btn-primary">保存组员信息</button>
+    </form>
+</div>
+</div>
+<hr>
+
+
+
 </body>
 </html>

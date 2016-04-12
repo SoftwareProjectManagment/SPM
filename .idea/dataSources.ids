@@ -158,18 +158,42 @@
         <data-type>varchar(255)</data-type>
         <default-expression>&apos;in:valid&apos;</default-expression>
       </column>
-      <key id="42" parent="5" name="PRIMARY">
+      <column id="42" parent="5" name="memberOne">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="43" parent="5" name="memberTwo">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="44" parent="5" name="memberThree">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="45" parent="5" name="memeberFour">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="46" parent="5" name="memberFive">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="47" parent="5" name="memberSix">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <key id="48" parent="5" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="43" parent="6" name="id">
+      <column id="49" parent="6" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="44" parent="6" name="name">
+      <column id="50" parent="6" name="name">
         <data-type>varchar(255)</data-type>
       </column>
-      <key id="45" parent="6" name="PRIMARY">
+      <key id="51" parent="6" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>

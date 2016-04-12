@@ -50,6 +50,12 @@ public class TeamDaoImpl implements TeamDao{
         team.setDocumentest(teamList.get(0).getDocumentest());
         team.setFilename(teamList.get(0).getFilename());
         team.setIpaddress(teamList.get(0).getIpaddress());
+        team.setMenberOne(teamList.get(0).getMenberOne());
+        team.setMenberTwo(teamList.get(0).getMenberTwo());
+        team.setMenberThree(teamList.get(0).getMenberThree());
+        team.setMenberFour(teamList.get(0).getMenberFour());
+        team.setMenberFive(teamList.get(0).getMenberFive());
+        team.setMenberSix(teamList.get(0).getMenberSix());
         return team;
     }
 }
