@@ -12,4 +12,8 @@ public interface StudentDao {
     void insert(Student student);
 
     public List<Student> getStudent(String studentName);
+
+    public List<Student> getStudent(int studentNumber);
+
+    public Student listToStudent(List<Student> studentList);
 }

@@ -57,7 +57,7 @@
 <div class="jumbotron">
     <div class="container text-center">
         <h1>欢迎来到小组信息录入界面</h1>
-        <button type="button" class="btn btn-primary btn-lg" href="#deploy">
+        <button type="button" class="btn btn-primary btn-lg" href="#">
             开始录入小组信息
         </button>
     </div>

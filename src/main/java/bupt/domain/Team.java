@@ -24,12 +24,23 @@ public class Team {
     private int documentest;
     private String filename;
     private String ipaddress;
-    private int menberOne;
-    private int menberTwo;
-    private int menberThree;
-    private int menberFour;
-    private int menberFive;
-    private int menberSix;
+    private int memberOne;
+    private int memberTwo;
+    private int memberThree;
+    private int memberFour;
+    private int memberFive;
+    private int memberSix;
+    private int pcaseOne;
+    private int pcaseTwo;
+    private int pcaseThree;
+    private int pcaseFour;
+    private int pcaseFive;
+    private int fcaseOne;
+    private int fcaseTwo;
+    private int fcaseThree;
+    private int fcaseFour;
+    private int fcaseFive;
+
 
     public Team(){
 
@@ -46,12 +57,12 @@ public class Team {
         this.documentest = documentest;
         this.filename = filename;
         this.ipaddress = ipaddress;
-        this.menberOne = menberOne;
-        this.menberTwo = menberTwo;
-        this.menberThree = menberThree;
-        this.menberFour = menberFour;
-        this.menberFive = menberFive;
-        this.menberSix = menberSix;
+        this.memberOne = menberOne;
+        this.memberTwo = menberTwo;
+        this.memberThree = menberThree;
+        this.memberFour = menberFour;
+        this.memberFive = menberFive;
+        this.memberSix = menberSix;
     }
 
     public int getId() {
@@ -134,51 +145,131 @@ public class Team {
         this.ipaddress = ipaddress;
     }
 
-    public int getMenberOne() {
-        return menberOne;
+    public int getMemberOne() {
+        return memberOne;
     }
 
-    public void setMenberOne(int menberOne) {
-        this.menberOne = menberOne;
+    public void setMemberOne(int memberOne) {
+        this.memberOne = memberOne;
     }
 
-    public int getMenberTwo() {
-        return menberTwo;
+    public int getMemberTwo() {
+        return memberTwo;
     }
 
-    public void setMenberTwo(int menberTwo) {
-        this.menberTwo = menberTwo;
+    public void setMemberTwo(int memberTwo) {
+        this.memberTwo = memberTwo;
     }
 
-    public int getMenberThree() {
-        return menberThree;
+    public int getMemberThree() {
+        return memberThree;
     }
 
-    public void setMenberThree(int menberThree) {
-        this.menberThree = menberThree;
+    public void setMemberThree(int memberThree) {
+        this.memberThree = memberThree;
     }
 
-    public int getMenberFour() {
-        return menberFour;
+    public int getMemberFour() {
+        return memberFour;
     }
 
-    public void setMenberFour(int menberFour) {
-        this.menberFour = menberFour;
+    public void setMemberFour(int memberFour) {
+        this.memberFour = memberFour;
     }
 
-    public int getMenberFive() {
-        return menberFive;
+    public int getMemberFive() {
+        return memberFive;
     }
 
-    public void setMenberFive(int menberFive) {
-        this.menberFive = menberFive;
+    public void setMemberFive(int memberFive) {
+        this.memberFive = memberFive;
     }
 
-    public int getMenberSix() {
-        return menberSix;
+    public int getMemberSix() {
+        return memberSix;
     }
 
-    public void setMenberSix(int menberSix) {
-        this.menberSix = menberSix;
+    public void setMemberSix(int memberSix) {
+        this.memberSix = memberSix;
+    }
+
+    public int getPcaseOne() {
+        return pcaseOne;
+    }
+
+    public void setPcaseOne(int pcaseOne) {
+        this.pcaseOne = pcaseOne;
+    }
+
+    public int getPcaseTwo() {
+        return pcaseTwo;
+    }
+
+    public void setPcaseTwo(int pcaseTwo) {
+        this.pcaseTwo = pcaseTwo;
+    }
+
+    public int getPcaseThree() {
+        return pcaseThree;
+    }
+
+    public void setPcaseThree(int pcaseThree) {
+        this.pcaseThree = pcaseThree;
+    }
+
+    public int getPcaseFour() {
+        return pcaseFour;
+    }
+
+    public void setPcaseFour(int pcaseFour) {
+        this.pcaseFour = pcaseFour;
+    }
+
+    public int getPcaseFive() {
+        return pcaseFive;
+    }
+
+    public void setPcaseFive(int pcaseFive) {
+        this.pcaseFive = pcaseFive;
+    }
+
+    public int getFcaseOne() {
+        return fcaseOne;
+    }
+
+    public void setFcaseOne(int fcaseOne) {
+        this.fcaseOne = fcaseOne;
+    }
+
+    public int getFcaseTwo() {
+        return fcaseTwo;
+    }
+
+    public void setFcaseTwo(int fcaseTwo) {
+        this.fcaseTwo = fcaseTwo;
+    }
+
+    public int getFcaseThree() {
+        return fcaseThree;
+    }
+
+    public void setFcaseThree(int fcaseThree) {
+        this.fcaseThree = fcaseThree;
+    }
+
+    public int getFcaseFour() {
+        return fcaseFour;
+    }
+
+    public void setFcaseFour(int fcaseFour) {
+        this.fcaseFour = fcaseFour;
+    }
+
+    public int getFcaseFive() {
+        return fcaseFive;
+    }
+
+    public void setFcaseFive(int fcaseFive) {
+        this.fcaseFive = fcaseFive;
     }
 }

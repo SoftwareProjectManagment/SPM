@@ -50,12 +50,22 @@ public class TeamDaoImpl implements TeamDao{
         team.setDocumentest(teamList.get(0).getDocumentest());
         team.setFilename(teamList.get(0).getFilename());
         team.setIpaddress(teamList.get(0).getIpaddress());
-        team.setMenberOne(teamList.get(0).getMenberOne());
-        team.setMenberTwo(teamList.get(0).getMenberTwo());
-        team.setMenberThree(teamList.get(0).getMenberThree());
-        team.setMenberFour(teamList.get(0).getMenberFour());
-        team.setMenberFive(teamList.get(0).getMenberFive());
-        team.setMenberSix(teamList.get(0).getMenberSix());
+        team.setMemberOne(teamList.get(0).getMemberOne());
+        team.setMemberTwo(teamList.get(0).getMemberTwo());
+        team.setMemberThree(teamList.get(0).getMemberThree());
+        team.setMemberFour(teamList.get(0).getMemberFour());
+        team.setMemberFive(teamList.get(0).getMemberFive());
+        team.setMemberSix(teamList.get(0).getMemberSix());
+        team.setPcaseOne(teamList.get(0).getPcaseOne());
+        team.setPcaseTwo(teamList.get(0).getPcaseTwo());
+        team.setPcaseThree(teamList.get(0).getPcaseThree());
+        team.setPcaseFour(teamList.get(0).getPcaseFour());
+        team.setPcaseFive(teamList.get(0).getPcaseFive());
+        team.setFcaseOne(teamList.get(0).getFcaseOne());
+        team.setFcaseTwo(teamList.get(0).getFcaseTwo());
+        team.setFcaseThree(teamList.get(0).getFcaseThree());
+        team.setFcaseFour(teamList.get(0).getFcaseFour());
+        team.setFcaseFive(teamList.get(0).getFcaseFive());
         return team;
     }
 }

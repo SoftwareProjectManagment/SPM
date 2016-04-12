@@ -42,7 +42,6 @@ public class TeamServiceImpl implements TeamService{
     }
 
     @Override
-    @Transactional
     public Team listToTeam(List<Team> teamList){
         return teamDao.listToTeam(teamList);
     }

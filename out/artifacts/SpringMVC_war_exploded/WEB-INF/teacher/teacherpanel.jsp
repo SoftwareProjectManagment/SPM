@@ -179,11 +179,11 @@
             </c:otherwise>
         </c:choose>
         <hr/>
-        <form action="" class="form-inline" role="form" method="post">
+        <form action="teaminfo.mvc" class="form-inline" role="form" method="post">
         <div class="form-group">
             <h2>选择要查看信息的小组</h2>
             <label for="choose-team" class="sr-only">选择要查看信息的小组</label>
-            <select class="form-control" id="choose-team" name="scoreForTeam">
+            <select class="form-control" id="choose-team" name="selectTeamInfo">
                 <c:forEach var="team" items="${teamList}">
                     <option value=${team.id}>${team.id}</option>
                 </c:forEach>

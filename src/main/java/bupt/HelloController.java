@@ -510,5 +510,175 @@ public class HelloController {
         return new ModelAndView("teacher/parameter",model);
     }
 
+    @RequestMapping(value = "/teaminfo.mvc", method = RequestMethod.POST)
+    public ModelAndView teaminfo(HttpServletRequest request){
+        int teamNumber = Integer.parseInt(request.getParameter("selectTeamInfo"));
+        int teacherID = (int) request.getSession().getAttribute("userID");
+        List<Team> teamList = teamService.getTeam(teamNumber);
+        List<Student> studentList = null;
+        List<Student> tempStudent;
+        tempStudent = studentService.getStudent(teamList.get(0).getMemberOne());
+        if (!tempStudent.isEmpty()){
+            Student student = studentService.listToStudent(tempStudent);
+            if (studentList == null){
+                studentList=tempStudent;
+            }
+            else{
+                studentList.add(student);
+            }
+        }
+
+        tempStudent = studentService.getStudent(teamList.get(0).getMemberTwo());
+        if (!tempStudent.isEmpty()){
+            Student student = studentService.listToStudent(tempStudent);
+            if (studentList == null){
+                studentList=tempStudent;
+            }
+            else{
+                studentList.add(student);
+            }
+        }
+
+        tempStudent = studentService.getStudent(teamList.get(0).getMemberThree());
+        if (!tempStudent.isEmpty()){
+            Student student = studentService.listToStudent(tempStudent);
+            if (studentList == null){
+                studentList=tempStudent;
+            }
+            else{
+                studentList.add(student);
+            }
+        }
+
+        tempStudent = studentService.getStudent(teamList.get(0).getMemberFour());
+        if (!tempStudent.isEmpty()){
+            Student student = studentService.listToStudent(tempStudent);
+            if (studentList == null){
+                studentList=tempStudent;
+            }
+            else{
+                studentList.add(student);
+            }
+        }
+
+        tempStudent = studentService.getStudent(teamList.get(0).getMemberFive());
+        if (!tempStudent.isEmpty()){
+            Student student = studentService.listToStudent(tempStudent);
+            if (studentList == null){
+                studentList=tempStudent;
+            }
+            else{
+                studentList.add(student);
+            }
+        }
+
+        tempStudent = studentService.getStudent(teamList.get(0).getMemberSix());
+        if (!tempStudent.isEmpty()){
+            Student student = studentService.listToStudent(tempStudent);
+            if (studentList == null){
+                studentList=tempStudent;
+            }
+            else{
+                studentList.add(student);
+            }
+        }
+
+        //List<Student> list=studentService.getStudent(name);
+        List<Teacher> list = teacherService.getTeacher(teacherID);
+        final Map<String, Object> model = new LinkedHashMap<String, Object>();
+        model.put("resultList", list);
+        model.put("teacherID", teacherID);
+        model.put("teamList",teamList);
+        model.put("studentList",studentList);
+        return new ModelAndView("teacher/teamInfo",model);
+    }
+
+    @RequestMapping(value = "/addStudentInfo.mvc", method = RequestMethod.POST)
+    public ModelAndView addStudentInfo(HttpServletRequest request){
+        int teamNumber = Integer.parseInt(request.getParameter("selectTeamInfo"));
+        int teacherID = (int) request.getSession().getAttribute("userID");
+        int addStudentNumber = Integer.parseInt(request.getParameter("addStudentNumber"));
+        int addStudentName = Integer.parseInt(request.getParameter("addStudentName"));
+
+        Student 
+
+        List<Team> teamList = teamService.getTeam(teamNumber);
+        List<Student> studentList = null;
+        List<Student> tempStudent;
+        tempStudent = studentService.getStudent(teamList.get(0).getMemberOne());
+        if (!tempStudent.isEmpty()){
+            Student student = studentService.listToStudent(tempStudent);
+            if (studentList == null){
+                studentList=tempStudent;
+            }
+            else{
+                studentList.add(student);
+            }
+        }
+
+        tempStudent = studentService.getStudent(teamList.get(0).getMemberTwo());
+        if (!tempStudent.isEmpty()){
+            Student student = studentService.listToStudent(tempStudent);
+            if (studentList == null){
+                studentList=tempStudent;
+            }
+            else{
+                studentList.add(student);
+            }
+        }
+
+        tempStudent = studentService.getStudent(teamList.get(0).getMemberThree());
+        if (!tempStudent.isEmpty()){
+            Student student = studentService.listToStudent(tempStudent);
+            if (studentList == null){
+                studentList=tempStudent;
+            }
+            else{
+                studentList.add(student);
+            }
+        }
+
+        tempStudent = studentService.getStudent(teamList.get(0).getMemberFour());
+        if (!tempStudent.isEmpty()){
+            Student student = studentService.listToStudent(tempStudent);
+            if (studentList == null){
+                studentList=tempStudent;
+            }
+            else{
+                studentList.add(student);
+            }
+        }
+
+        tempStudent = studentService.getStudent(teamList.get(0).getMemberFive());
+        if (!tempStudent.isEmpty()){
+            Student student = studentService.listToStudent(tempStudent);
+            if (studentList == null){
+                studentList=tempStudent;
+            }
+            else{
+                studentList.add(student);
+            }
+        }
+
+        tempStudent = studentService.getStudent(teamList.get(0).getMemberSix());
+        if (!tempStudent.isEmpty()){
+            Student student = studentService.listToStudent(tempStudent);
+            if (studentList == null){
+                studentList=tempStudent;
+            }
+            else{
+                studentList.add(student);
+            }
+        }
+
+        //List<Student> list=studentService.getStudent(name);
+        List<Teacher> list = teacherService.getTeacher(teacherID);
+        final Map<String, Object> model = new LinkedHashMap<String, Object>();
+        model.put("resultList", list);
+        model.put("teacherID", teacherID);
+        model.put("teamList",teamList);
+        model.put("studentList",studentList);
+        return new ModelAndView("teacher/teamInfo",model);
+    }
 
 }

@@ -28,4 +28,15 @@ public class StudentServiceImpl implements StudentService{
     public List<Student> getStudent(String studentName) {
         return studentDao.getStudent(studentName);
     }
+
+    @Override
+    @Transactional
+    public List<Student> getStudent(int studentNumber) {
+        return studentDao.getStudent(studentNumber);
+    }
+
+    @Override
+    public Student listToStudent(List<Student> studentList) {
+        return studentDao.listToStudent(studentList);
+    }
 }
