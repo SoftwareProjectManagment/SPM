@@ -239,23 +239,23 @@
                                     <tbody>
                                     <tr>
                                         <th scope="row">测试用例1</th>
-                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">测试用例2</th>
-                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">测试用例3</th>
-                                        <th><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></th>
+                                        <td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">测试用例4</th>
-                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">测试用例5</th>
-                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -277,23 +277,23 @@
                                 <tbody>
                                 <tr>
                                     <th scope="row">测试用例1</th>
-                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                    <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">测试用例2</th>
-                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                    <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">测试用例3</th>
-                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                    <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">测试用例4</th>
-                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                    <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">测试用例5</th>
-                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                    <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -346,23 +346,23 @@
                                     <tbody>
                                     <tr>
                                         <th scope="row">测试用例1</th>
-                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">测试用例2</th>
-                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">测试用例3</th>
-                                        <th><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></th>
+                                        <td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">测试用例4</th>
-                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">测试用例5</th>
-                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -384,23 +384,23 @@
                                 <tbody>
                                 <tr>
                                     <th scope="row">测试用例1</th>
-                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                    <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">测试用例2</th>
-                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                    <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">测试用例3</th>
-                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                    <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">测试用例4</th>
-                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                    <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">测试用例5</th>
-                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                    <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
                                 </tr>
                                 </tbody>
                             </table>

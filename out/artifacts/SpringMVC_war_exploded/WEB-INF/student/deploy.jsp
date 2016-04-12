@@ -168,7 +168,7 @@
             <br>
             <div>
                 <c:choose>
-                    <c:when test="${ checkFrontPage == -2 && checkFunction == -1 && checkCodeOne == -1 && checkCodeTwo == -1 }">
+                    <c:when test="${ checkFrontPage != -1 && checkFunction == -1 && checkCodeOne == -1 && checkCodeTwo == -1 }">
                         <div class="row">
                             <div class="col-lg-10">
                                 <div class="progress" >
@@ -212,7 +212,7 @@
             <div class="container text-center">
                 <form action="function.mvc" class="form-inline" role="form" method="post">
                     <c:choose>
-                        <c:when test="${ checkFrontPage == -2 && checkFunction == -1 && checkPerformance == -1}">
+                        <c:when test="${ checkFrontPage != -1 && checkFunction == -1 && checkPerformance == -1}">
                             <div class="container text-center">
                                 <button type="submit" class="btn btn-primary">开始功能测试</button>
                             </div>
@@ -228,7 +228,7 @@
             <br>
             <div>
                 <c:choose>
-                <c:when test="${checkFunction == -2 }">
+                <c:when test="${checkFunction != -1 }">
                     <div class="row">
                         <div class="col-sm-8">
                             <div class="panel panel-default">
@@ -239,23 +239,23 @@
                                     <tbody>
                                     <tr>
                                         <th scope="row">测试用例1</th>
-                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">测试用例2</th>
-                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">测试用例3</th>
-                                        <th><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></th>
+                                        <td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">测试用例4</th>
-                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">测试用例5</th>
-                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -277,23 +277,23 @@
                                 <tbody>
                                 <tr>
                                     <th scope="row">测试用例1</th>
-                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                    <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">测试用例2</th>
-                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                    <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">测试用例3</th>
-                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                    <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">测试用例4</th>
-                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                    <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">测试用例5</th>
-                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                    <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -319,7 +319,7 @@
             <div class="container text-center">
                 <form action="performance.mvc" class="form-inline" role="form" method="post">
                     <c:choose>
-                        <c:when test="${checkFunction == -2 && checkPerformance == -1 && checkCodeOne == -1 && checkCodeTwo == -1}">
+                        <c:when test="${checkFunction != -1 && checkPerformance == -1 && checkCodeOne == -1 && checkCodeTwo == -1}">
                             <div class="container text-center">
                                 <button type="submit" class="btn btn-primary">开始性能测试</button>
                             </div>
@@ -335,7 +335,7 @@
             <br>
             <div>
                 <c:choose>
-                <c:when test="${checkPerformance == -2 }">
+                <c:when test="${checkPerformance != -1 }">
                     <div class="row">
                         <div class="col-sm-8">
                             <div class="panel panel-default">
@@ -346,23 +346,23 @@
                                     <tbody>
                                     <tr>
                                         <th scope="row">测试用例1</th>
-                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">测试用例2</th>
-                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">测试用例3</th>
-                                        <th><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></th>
+                                        <td><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">测试用例4</th>
-                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                                     </tr>
                                     <tr>
                                         <th scope="row">测试用例5</th>
-                                        <th><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></th>
+                                        <td><span class="glyphicon glyphicon-ok" aria-hidden="true"></span></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -384,23 +384,23 @@
                                 <tbody>
                                 <tr>
                                     <th scope="row">测试用例1</th>
-                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                    <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">测试用例2</th>
-                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                    <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">测试用例3</th>
-                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                    <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">测试用例4</th>
-                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                    <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
                                 </tr>
                                 <tr>
                                     <th scope="row">测试用例5</th>
-                                    <th><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></th>
+                                    <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
                                 </tr>
                                 </tbody>
                             </table>
@@ -426,7 +426,7 @@
                 <div class="container text-center">
                     <form action="code.mvc" class="form-inline" role="form" method="post">
                         <c:choose>
-                            <c:when test="${checkPerformance == -2 && checkCodeOne == -1 && checkCodeTwo == -1  && checkDocument == -1}">
+                            <c:when test="${checkPerformance != -1 && checkCodeOne == -1 && checkCodeTwo == -1  && checkDocument == -1}">
                                 <div class="container text-center">
                                     <button type="submit" class="btn btn-primary">开始检测代码</button>
                                 </div>
@@ -442,7 +442,7 @@
                 <br>
                 <div>
                     <c:choose>
-                        <c:when test="${deployedFile != 'in:valid' && deployedIP != 'in:valid' && checkFrontPage == -2 && checkFunction == -2 && checkPerformance == -2 && checkCodeOne == -2 && checkCodeTwo == -2 && checkDocument == -1}">
+                        <c:when test="${deployedFile != 'in:valid' && deployedIP != 'in:valid' && checkFrontPage != -1 && checkFunction != -1 && checkPerformance != -1 && checkCodeOne != -1 && checkCodeTwo != -1 && checkDocument == -1}">
                             <div class="row">
                                 <div class="col-lg-10">
                                     <div class="progress" >
@@ -480,7 +480,7 @@
                 <div class="container text-center">
                     <form action="document.mvc" class="form-inline" role="form" method="post">
                         <c:choose>
-                            <c:when test="${checkCodeOne == -2 && checkCodeTwo == -2  && checkPerformance == -2}">
+                            <c:when test="${checkCodeOne != -1 && checkCodeTwo != -1  && checkPerformance != -1}">
                                 <div class="container text-center">
                                     <button type="submit" class="btn btn-primary">开始检测文档</button>
                                 </div>
@@ -496,7 +496,7 @@
                 <br>
                 <div>
                     <c:choose>
-                        <c:when test="${deployedFile != 'in:valid' && deployedIP != 'in:valid' && checkFrontPage == -2 && checkFunction == -2 && checkCodeOne == -2 && checkCodeTwo == -2 && checkDocument == -2}">
+                        <c:when test="${deployedFile != 'in:valid' && deployedIP != 'in:valid' && checkFrontPage != -1 && checkFunction != -1 && checkCodeOne != -1 && checkCodeTwo != -1 && checkDocument != -1}">
                             <div class="row">
                                 <div class="col-lg-10">
                                     <div class="progress" >

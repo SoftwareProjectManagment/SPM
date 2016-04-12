@@ -77,7 +77,7 @@
                 <form action="deploy.mvc" method="post">
                     <button type="submit" class="btn btn-primary">开始安装部署系统</button>
                 </form>
-                <form action="score.mvc" method="post">
+                <form action="score.mvc" method="get">
                     <button type="submit" class="btn btn-primary">查看成绩</button>
                 </form>
             </c:otherwise>

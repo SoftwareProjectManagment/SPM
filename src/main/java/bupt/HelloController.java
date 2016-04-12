@@ -88,15 +88,7 @@ public class HelloController {
         return new ModelAndView("deploy#document",model);
     }
 
-    @RequestMapping(value = "/score.mvc", method = RequestMethod.POST)
-    public ModelAndView score(HttpServletRequest request){
-        String name = (String) request.getSession().getAttribute("username");
-        List<Student> list=studentService.getStudent(name);
-        final Map<String, Object> model = new LinkedHashMap<String, Object>();
-        model.put("resultList", list);
-        model.put("userName", name);
-        return new ModelAndView("score",model);
-    }
+
 
     @RequestMapping(value = "/upload.mvc", method = RequestMethod.POST)
     public ModelAndView upload( HttpServletRequest request){
@@ -361,6 +353,19 @@ public class HelloController {
 
         return new ModelAndView("deploy",model);
 
+    }
+
+    @RequestMapping(value = "/score.mvc", method = RequestMethod.GET)
+    public ModelAndView score(HttpServletRequest request){
+        String name = (String) request.getSession().getAttribute("username");
+        List<Student> list=studentService.getStudent(name);
+        if (list.get(0).getScore()<0){
+            list.clear();
+        }
+        final Map<String, Object> model = new LinkedHashMap<String, Object>();
+        model.put("resultList", list);
+        model.put("userName", name);
+        return new ModelAndView("score",model);
     }
 
 }
