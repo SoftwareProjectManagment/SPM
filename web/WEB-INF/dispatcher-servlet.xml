@@ -13,15 +13,23 @@
 
     <!-- 定义视图解析器 -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-        <property name="prefix" value="/WEB-INF/student/"/>
+        <property name="prefix" value="/WEB-INF/"/>
         <property name="suffix" value=".jsp"/>
         <property name="order" value="0"/>
+        <property name="viewNames" value="student*"/>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/"/>
+        <property name="suffix" value=".jsp"/>
+        <property name="order" value="1"/>
+        <property name="viewNames" value="teacher*"/>
     </bean>
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/app/"/>
         <property name="suffix" value=".jsp"/>
-        <property name="order" value="1"/>
+        <property name="order" value="2"/>
     </bean>
 
     <!-- 数据库映射 -->
@@ -56,8 +64,10 @@
 
     <bean id="studentDao" class="main.java.bupt.dao.StudentDaoImpl"/>
     <bean id="teamDao" class="main.java.bupt.dao.TeamDaoImpl"/>
+    <bean id="teacherDao" class="main.java.bupt.dao.TeacherDaoImpl"/>
 
     <bean id="studentService" class="main.java.bupt.service.StudentServiceImpl"/>
     <bean id="teamService" class="main.java.bupt.service.TeamServiceImpl"/>
+    <bean id="teacherService" class="main.java.bupt.service.TeacherServiceImpl"/>
 
 </beans>

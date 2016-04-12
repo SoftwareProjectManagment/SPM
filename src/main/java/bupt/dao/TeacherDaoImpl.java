@@ -20,7 +20,6 @@ public class TeacherDaoImpl implements TeacherDao {
 
     @Override
     public void insert(Teacher teacher) {
-        sessionFactory.getCurrentSession().clear();
         sessionFactory.getCurrentSession().saveOrUpdate(teacher);
     }
 
@@ -31,7 +30,6 @@ public class TeacherDaoImpl implements TeacherDao {
 
     @Override
     public void update(Teacher teacher) {
-        sessionFactory.getCurrentSession().clear();
         sessionFactory.getCurrentSession().saveOrUpdate(teacher);
     }
 

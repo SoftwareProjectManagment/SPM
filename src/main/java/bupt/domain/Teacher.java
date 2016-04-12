@@ -1,6 +1,9 @@
 package main.java.bupt.domain;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 /**
  * Created by Java on 2016/3/14.
@@ -8,8 +11,8 @@ import javax.persistence.*;
 @Entity
 public class Teacher {
 
-
-    //@GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String name;
@@ -22,8 +25,6 @@ public class Teacher {
 
     }
 
-    @Id
-    @Column(name="id")
     public int getId() {
         return id;
     }
@@ -32,7 +33,6 @@ public class Teacher {
         this.id = id;
     }
 
-    @Column(name="name")
     public String getName() {
         return name;
     }

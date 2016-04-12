@@ -1,8 +1,10 @@
 package main.java.bupt;
 
 import main.java.bupt.domain.Student;
+import main.java.bupt.domain.Teacher;
 import main.java.bupt.domain.Team;
 import main.java.bupt.service.StudentService;
+import main.java.bupt.service.TeacherService;
 import main.java.bupt.service.TeamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,6 +32,9 @@ public class HelloController {
     @Autowired
     private TeamService teamService;
 
+    @Autowired
+    private TeacherService teacherService;
+
     @RequestMapping(value = "/student.mvc",method = RequestMethod.GET)
     public ModelAndView student() {
         return new ModelAndView("student","command", new Student());
@@ -52,7 +57,7 @@ public class HelloController {
         final Map<String, Object> model = new LinkedHashMap<String, Object>();
         model.put("resultList", list);
         model.put("userName", name);
-        return new ModelAndView("studentpanel",model);
+        return new ModelAndView("student/studentpanel",model);
     }
 
     @RequestMapping(value = "/deploy.mvc", method = RequestMethod.POST)
@@ -65,7 +70,6 @@ public class HelloController {
 
         String filename = teamList.get(0).getFilename();
         String IPaddress = teamList.get(0).getIpaddress();
-        String isDeployed = filename;
 
         int checkFunction = teamList.get(0).getFunctiontest();
         int checkFrontPage = teamList.get(0).getFrontpagetest();
@@ -75,7 +79,6 @@ public class HelloController {
         int checkDocument = teamList.get(0).getDocumentest();
 
         model.put("resultList", list);
-        model.put("isDeployed",isDeployed);
         model.put("deployedFile",filename);
         model.put("deployedIP",IPaddress);
         model.put("checkFunction",checkFunction);
@@ -85,7 +88,7 @@ public class HelloController {
         model.put("checkCodeTwo",checkCodeTwo);
         model.put("checkPerformance",checkPerformance);
 
-        return new ModelAndView("deploy#document",model);
+        return new ModelAndView("student/deploy",model);
     }
 
 
@@ -133,7 +136,7 @@ public class HelloController {
 
         model.put("checkFrontPage",checkFrontPage);
 
-        return new ModelAndView("deploy",model);
+        return new ModelAndView("student/deploy",model);
     }
 
     @RequestMapping(value = "/frontpage.mvc", method = RequestMethod.POST)
@@ -176,7 +179,7 @@ public class HelloController {
         model.put("resultList",list);
         model.put("checkFrontPage",checkFrontPage);
 
-        return new ModelAndView("deploy",model);
+        return new ModelAndView("student/deploy",model);
     }
 
     @RequestMapping(value = "/function.mvc", method = RequestMethod.POST)
@@ -219,7 +222,7 @@ public class HelloController {
         model.put("resultList",list);
         model.put("checkFrontPage",checkFrontPage);
 
-        return new ModelAndView("deploy",model);
+        return new ModelAndView("student/deploy",model);
     }
 
     @RequestMapping(value = "/performance.mvc", method = RequestMethod.POST)
@@ -262,7 +265,7 @@ public class HelloController {
         model.put("resultList",list);
         model.put("checkFrontPage",checkFrontPage);
 
-        return new ModelAndView("deploy",model);
+        return new ModelAndView("student/deploy",model);
 
     }
 
@@ -307,7 +310,7 @@ public class HelloController {
         model.put("resultList",list);
         model.put("checkFrontPage",checkFrontPage);
 
-        return new ModelAndView("deploy",model);
+        return new ModelAndView("student/deploy",model);
 
     }
 
@@ -351,7 +354,7 @@ public class HelloController {
         model.put("resultList",list);
         model.put("checkFrontPage",checkFrontPage);
 
-        return new ModelAndView("deploy",model);
+        return new ModelAndView("student/deploy",model);
 
     }
 
@@ -367,5 +370,39 @@ public class HelloController {
         model.put("userName", name);
         return new ModelAndView("score",model);
     }
+
+    @RequestMapping(value = "/teacherpanel.mvc", method = RequestMethod.GET)
+    public ModelAndView teacherpanel(HttpServletRequest request){
+        int teacherID = (int) request.getSession().getAttribute("userID");
+        //List<Student> list=studentService.getStudent(name);
+        List<Teacher> list = teacherService.getTeacher(teacherID);
+        final Map<String, Object> model = new LinkedHashMap<String, Object>();
+        model.put("resultList", list);
+        model.put("teacherID", teacherID);
+        return new ModelAndView("teacher/teacherpanel",model);
+    }
+
+    @RequestMapping(value = "/enroll.mvc", method = RequestMethod.POST)
+    public ModelAndView enroll(HttpServletRequest request){
+        int teacherID = (int) request.getSession().getAttribute("userID");
+        //List<Student> list=studentService.getStudent(name);
+        List<Teacher> list = teacherService.getTeacher(teacherID);
+        final Map<String, Object> model = new LinkedHashMap<String, Object>();
+        model.put("resultList", list);
+        model.put("teacherID", teacherID);
+        return new ModelAndView("teacher/enroll",model);
+    }
+
+    @RequestMapping(value = "/parameter.mvc", method = RequestMethod.POST)
+    public ModelAndView parameter(HttpServletRequest request){
+        int teacherID = (int) request.getSession().getAttribute("userID");
+        //List<Student> list=studentService.getStudent(name);
+        List<Teacher> list = teacherService.getTeacher(teacherID);
+        final Map<String, Object> model = new LinkedHashMap<String, Object>();
+        model.put("resultList", list);
+        model.put("teacherID", teacherID);
+        return new ModelAndView("teacher/parameter",model);
+    }
+
 
 }
