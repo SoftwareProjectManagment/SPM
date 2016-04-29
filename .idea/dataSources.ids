@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component name="dataSourceStorage">
-  <data-source name="MySQL - test@localhost" uuid="9f4d3cbc-dcb6-46bb-ab71-204ce513ae2e">
+  <data-source name="MySQL - test@localhost" uuid="55c6bff6-5c83-4fe9-8760-d36dede6849a">
     <database-info product="MySQL" version="5.6.26-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
       <extra-name-characters>#@</extra-name-characters>
       <identifier-quote-string>`</identifier-quote-string>
@@ -8,237 +8,237 @@
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
     <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
       <schema id="1" name="test"/>
-      <table id="2" parent="1" name="student"/>
-      <table id="3" parent="1" name="user"/>
-      <table id="4" parent="1" name="team"/>
+      <table id="2" parent="1" name="admin"/>
+      <table id="3" parent="1" name="configuration"/>
+      <table id="4" parent="1" name="student"/>
       <table id="5" parent="1" name="teacher"/>
-      <table id="6" parent="1" name="configuration"/>
-      <table id="7" parent="1" name="admin"/>
+      <table id="6" parent="1" name="team"/>
+      <table id="7" parent="1" name="user"/>
       <column id="8" parent="2" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
       <column id="9" parent="2" name="name">
-        <data-type>varchar(255)</data-type>
+        <data-type>varchar(45)</data-type>
       </column>
-      <column id="10" parent="2" name="score">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;-1&apos;</default-expression>
-      </column>
-      <column id="11" parent="2" name="groupnum">
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="12" parent="2" name="deployscore">
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;-1&apos;</default-expression>
-      </column>
-      <column id="13" parent="2" name="frontpagescore">
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;-1&apos;</default-expression>
-      </column>
-      <column id="14" parent="2" name="functionscore">
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;-1&apos;</default-expression>
-      </column>
-      <column id="15" parent="2" name="performancescore">
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;-1&apos;</default-expression>
-      </column>
-      <column id="16" parent="2" name="codescore">
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;-1&apos;</default-expression>
-      </column>
-      <column id="17" parent="2" name="documentscore">
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;-1&apos;</default-expression>
-      </column>
-      <key id="18" parent="2" name="PRIMARY">
+      <key id="10" parent="2" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="19" parent="3" name="id">
+      <column id="11" parent="3" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="20" parent="3" name="username">
+      <column id="12" parent="3" name="ipOne">
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;in:valid&apos;</default-expression>
+      </column>
+      <column id="13" parent="3" name="ipTwo">
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;in:valid&apos;</default-expression>
+      </column>
+      <column id="14" parent="3" name="ipThree">
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;in:valid&apos;</default-expression>
+      </column>
+      <key id="15" parent="3" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="16" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="17" parent="4" name="name">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="18" parent="4" name="score">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="19" parent="4" name="groupnum">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="20" parent="4" name="deployscore">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="21" parent="4" name="frontpagescore">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="22" parent="4" name="functionscore">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="23" parent="4" name="performancescore">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="24" parent="4" name="codescore">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="25" parent="4" name="documentscore">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <key id="26" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="27" parent="5" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="28" parent="5" name="name">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="29" parent="5" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="30" parent="6" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="31" parent="6" name="deploytest">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="32" parent="6" name="frontpagetest">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="33" parent="6" name="functiontest">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="34" parent="6" name="performancetest">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="35" parent="6" name="codetestone">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="36" parent="6" name="codetestwo">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="37" parent="6" name="documentest">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="38" parent="6" name="filename">
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;in:valid&apos;</default-expression>
+      </column>
+      <column id="39" parent="6" name="ipaddress">
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;in:valid&apos;</default-expression>
+      </column>
+      <column id="40" parent="6" name="memberOne">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="41" parent="6" name="memberTwo">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="42" parent="6" name="memberThree">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="43" parent="6" name="memberFive">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="44" parent="6" name="memberSix">
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <column id="45" parent="6" name="pcaseOne">
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;in:valid&apos;</default-expression>
+      </column>
+      <column id="46" parent="6" name="pcaseTwo">
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;in:valid&apos;</default-expression>
+      </column>
+      <column id="47" parent="6" name="pcaseThree">
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;in:valid&apos;</default-expression>
+      </column>
+      <column id="48" parent="6" name="pcaseFour">
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;in:valid&apos;</default-expression>
+      </column>
+      <column id="49" parent="6" name="pcaseFive">
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;in:valid&apos;</default-expression>
+      </column>
+      <column id="50" parent="6" name="fcaseOne">
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;in:valid&apos;</default-expression>
+      </column>
+      <column id="51" parent="6" name="fcaseTwo">
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;in:valid&apos;</default-expression>
+      </column>
+      <column id="52" parent="6" name="fcaseThree">
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;in:valid&apos;</default-expression>
+      </column>
+      <column id="53" parent="6" name="fcaseFour">
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;in:valid&apos;</default-expression>
+      </column>
+      <column id="54" parent="6" name="fcaseFive">
+        <data-type>varchar(255)</data-type>
+        <default-expression>&apos;in:valid&apos;</default-expression>
+      </column>
+      <column id="55" parent="6" name="memberFour">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+        <default-expression>&apos;-1&apos;</default-expression>
+      </column>
+      <key id="56" parent="6" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="57" parent="7" name="id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="58" parent="7" name="username">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="21" parent="3" name="password">
+      <column id="59" parent="7" name="password">
         <mandatory>1</mandatory>
         <data-type>varchar(45)</data-type>
       </column>
-      <column id="22" parent="3" name="identity">
+      <column id="60" parent="7" name="identity">
         <data-type>varchar(45)</data-type>
       </column>
-      <index id="23" parent="3" name="id_UNIQUE">
+      <index id="61" parent="7" name="id_UNIQUE">
         <columns>id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="24" parent="3" name="id_UNIQUE">
+      <key id="62" parent="7" name="id_UNIQUE">
         <columns>id</columns>
         <underlying-index>id_UNIQUE</underlying-index>
       </key>
-      <key id="25" parent="3" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="26" parent="4" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="27" parent="4" name="deploytest">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;-1&apos;</default-expression>
-      </column>
-      <column id="28" parent="4" name="frontpagetest">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;-1&apos;</default-expression>
-      </column>
-      <column id="29" parent="4" name="functiontest">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;-1&apos;</default-expression>
-      </column>
-      <column id="30" parent="4" name="performancetest">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;-1&apos;</default-expression>
-      </column>
-      <column id="31" parent="4" name="codetestone">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;-1&apos;</default-expression>
-      </column>
-      <column id="32" parent="4" name="codetestwo">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;-1&apos;</default-expression>
-      </column>
-      <column id="33" parent="4" name="documentest">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;-1&apos;</default-expression>
-      </column>
-      <column id="34" parent="4" name="filename">
-        <data-type>varchar(255)</data-type>
-        <default-expression>&apos;in:valid&apos;</default-expression>
-      </column>
-      <column id="35" parent="4" name="ipaddress">
-        <data-type>varchar(255)</data-type>
-        <default-expression>&apos;in:valid&apos;</default-expression>
-      </column>
-      <column id="36" parent="4" name="memberOne">
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;-1&apos;</default-expression>
-      </column>
-      <column id="37" parent="4" name="memberTwo">
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;-1&apos;</default-expression>
-      </column>
-      <column id="38" parent="4" name="memberThree">
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;-1&apos;</default-expression>
-      </column>
-      <column id="39" parent="4" name="memberFive">
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;-1&apos;</default-expression>
-      </column>
-      <column id="40" parent="4" name="memberSix">
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;-1&apos;</default-expression>
-      </column>
-      <column id="41" parent="4" name="pcaseOne">
-        <data-type>varchar(255)</data-type>
-        <default-expression>&apos;in:valid&apos;</default-expression>
-      </column>
-      <column id="42" parent="4" name="pcaseTwo">
-        <data-type>varchar(255)</data-type>
-        <default-expression>&apos;in:valid&apos;</default-expression>
-      </column>
-      <column id="43" parent="4" name="pcaseThree">
-        <data-type>varchar(255)</data-type>
-        <default-expression>&apos;in:valid&apos;</default-expression>
-      </column>
-      <column id="44" parent="4" name="pcaseFour">
-        <data-type>varchar(255)</data-type>
-        <default-expression>&apos;in:valid&apos;</default-expression>
-      </column>
-      <column id="45" parent="4" name="pcaseFive">
-        <data-type>varchar(255)</data-type>
-        <default-expression>&apos;in:valid&apos;</default-expression>
-      </column>
-      <column id="46" parent="4" name="fcaseOne">
-        <data-type>varchar(255)</data-type>
-        <default-expression>&apos;in:valid&apos;</default-expression>
-      </column>
-      <column id="47" parent="4" name="fcaseTwo">
-        <data-type>varchar(255)</data-type>
-        <default-expression>&apos;in:valid&apos;</default-expression>
-      </column>
-      <column id="48" parent="4" name="fcaseThree">
-        <data-type>varchar(255)</data-type>
-        <default-expression>&apos;in:valid&apos;</default-expression>
-      </column>
-      <column id="49" parent="4" name="fcaseFour">
-        <data-type>varchar(255)</data-type>
-        <default-expression>&apos;in:valid&apos;</default-expression>
-      </column>
-      <column id="50" parent="4" name="fcaseFive">
-        <data-type>varchar(255)</data-type>
-        <default-expression>&apos;in:valid&apos;</default-expression>
-      </column>
-      <column id="51" parent="4" name="memberFour">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;-1&apos;</default-expression>
-      </column>
-      <key id="52" parent="4" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="53" parent="5" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="54" parent="5" name="name">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="55" parent="5" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="56" parent="6" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="57" parent="6" name="ipOne">
-        <data-type>varchar(255)</data-type>
-        <default-expression>&apos;in:valid&apos;</default-expression>
-      </column>
-      <column id="58" parent="6" name="ipTwo">
-        <data-type>varchar(255)</data-type>
-        <default-expression>&apos;in:valid&apos;</default-expression>
-      </column>
-      <column id="59" parent="6" name="ipThree">
-        <data-type>varchar(255)</data-type>
-        <default-expression>&apos;in:valid&apos;</default-expression>
-      </column>
-      <key id="60" parent="6" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="61" parent="7" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="62" parent="7" name="name">
-        <data-type>varchar(45)</data-type>
-      </column>
       <key id="63" parent="7" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>

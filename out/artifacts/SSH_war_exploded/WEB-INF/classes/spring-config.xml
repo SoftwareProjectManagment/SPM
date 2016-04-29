@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="annotatedClasses">
+            <list>
+                <value>com.entity.AdminEntity</value>
+                <value>com.entity.ConfigurationEntity</value>
+                <value>com.entity.StudentEntity</value>
+                <value>com.entity.TeacherEntity</value>
+                <value>com.entity.TeamEntity</value>
+                <value>com.entity.UserEntity</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.connection.url">jdbc:mysql://localhost:3306/test</prop>
+                <prop key="hibernate.connection.driver_class">com.mysql.jdbc.Driver</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.connection.username">root</prop>
+                <prop key="hibernate.connection.password">root</prop>
+                <prop key="hibernate.current_session_context_class">thread</prop>
+            </props>
+        </property>
+    </bean>
+
+
+    <!--         *********     DAO       *************           -->
+    <bean id="adminDao" class="com.dao.AdminDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="studentDao" class="com.dao.StudentDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="teacherDao" class="com.dao.TeacherDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="teamDao" class="com.dao.TeamDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="userDao" class="com.dao.UserDaoImpl">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <!--      ************     SERVICE      **************      -->
+    <bean id="adminManager" class="com.service.AdminManagerImpl">
+        <property name="adminDao" ref="adminDao"/>
+    </bean>
+
+    <bean id="studentManager" class="com.service.StudentManagerImpl">
+        <property name="studentDao" ref="studentDao"/>
+    </bean>
+
+    <bean id="teacherManager" class="com.service.TeacherManagerImpl">
+        <property name="teacherDao" ref="teacherDao"/>
+    </bean>
+
+    <bean id="teamManager" class="com.service.TeamManagerImpl">
+    <property name="teamDao" ref="teamDao"/>
+    </bean>
+
+    <bean id="userManager" class="com.service.UserManagerImpl">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+    <!--     ***********        ACTION          *************     -->
+    <bean id="regAction" class="com.action.RegisterAction">
+        <property name="userManager" ref="userManager"/>
+    </bean>
+
+    <bean id="logAction" class="com.action.LoginAction">
+        <property name="adminManager" ref="adminManager"/>
+        <property name="studentManager" ref="studentManager"/>
+        <property name="teacherManager" ref="teacherManager"/>
+        <property name="teamManager" ref="teamManager"/>
+        <property name="userManager" ref="userManager"/>
+    </bean>
+
+    <bean id="deployAction" class="com.action.DeployAction">
+        <property name="teamManager" ref="teamManager"/>
+    </bean>
+
+    <bean id="enrollAction" class="com.action.EnrollAction">
+        <property name="teamManager" ref="teamManager"/>
+    </bean>
+
+    <bean id="markAction" class="com.action.MarkAction">
+        <property name="teamManager" ref="teamManager"/>
+    </bean>
+
+    <bean id="teamInfoAction" class="com.action.TeamInfoAction">
+        <property name="teamManager" ref="teamManager"/>
+        <property name="studentManager" ref="studentManager"/>
+        <property name="userManager" ref="userManager"/>
+    </bean>
+
+    <bean id="userInfoAction" class="com.action.UserInfoAction">
+        <property name="userManager" ref="userManager"/>
+        <property name="studentManager" ref="studentManager"/>
+        <property name="teamManager" ref="teamManager"/>
+    </bean>
+
+</beans>
