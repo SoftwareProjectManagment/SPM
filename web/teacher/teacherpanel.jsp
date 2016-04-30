@@ -48,18 +48,16 @@
                                 </form>
                             </li>
                             <li>
-                                <form>
-                                    <a href="/SSH_war_exploded/teacher/parameter.jsp">
-                                        <button type="submit" class="btn btn-primary navbar-btn">参数设置</button>
-                                    </a>
+                                <form action="parameter.action" class="nav-form" method="post">
+                                    <button type="submit" class="btn btn-primary navbar-btn">参数设置</button>
                                 </form>
                             </li>
                         </c:otherwise>
                     </c:choose>
                 </ul>
-                <s:form action="logout" class="nav-form navbar-right" method="post" role="button">
+                <form action="logout.action" class="nav-form navbar-right" method="post" role="button">
                     <button type="submit" class="btn btn-default navbar-btn" >退出</button>
-                </s:form>
+                </form>
             </div>
         </div>
     </nav>

@@ -5,9 +5,6 @@ import com.entity.TeamEntity;
 
 import java.util.List;
 
-/**
- * Created by Java on 2016/3/11.
- */
 public interface TeamDao {
     void insert(TeamEntity team);
 

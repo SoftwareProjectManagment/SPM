@@ -53,7 +53,7 @@
                 </c:choose>
             </ul>
 
-            <form action="/SpringMVC_war_exploded/" class="nav-form navbar-right" method="post" role="button">
+            <form action="logout.action" class="nav-form navbar-right" method="post" role="button">
                 <button type="submit" class="btn btn-default navbar-btn" >退出</button>
             </form>
         </div>

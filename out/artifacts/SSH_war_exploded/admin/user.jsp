@@ -59,9 +59,9 @@
                         </c:otherwise>
                     </c:choose>
                 </ul>
-                <s:form action="logout" class="nav-form navbar-right" method="post" role="button">
-                    <button type="submit" class="btn btn-default navbar-btn" >退出</button>
-                </s:form>
+                <a href="/SSH_war_exploded/teacher/adminpanel.jsp">
+                    <button type="submit" class="btn btn-default navbar-btn" >返回</button>
+                </a>
             </div>
         </div>
     </nav>
@@ -141,10 +141,10 @@
                                         <input class="form-control" name="name${ordinal}" type="text" value="${user.username}" style="width:70px;"/>
                                     </td>
                                     <td>
-                                        <input class="form-control" name="password${ordinal}" type="text" value="${user.password}" style="width:70px;"/>
+                                        <input class="form-control" name="password${ordinal}" type="text" value="${user.password}" style="width:100px;"/>
                                     </td>
                                     <td>
-                                        <input class="form-control" name="identity${ordinal}" type="text" value="${user.identity}" style="width:70px;"/>
+                                        <input class="form-control" name="identity${ordinal}" type="text" value="${user.identity}" style="width:140px;"/>
                                     </td>
                                     <td><input name="chooseUser" type="radio" value="${user.id}"/></td>
                                 </tr>

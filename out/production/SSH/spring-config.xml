@@ -106,4 +106,8 @@
         <property name="teamManager" ref="teamManager"/>
     </bean>
 
+    <bean id="markFinishAction" class="com.action.MarkFinishAction">
+        <property name="teamManager" ref="teamManager"/>
+    </bean>
+
 </beans>

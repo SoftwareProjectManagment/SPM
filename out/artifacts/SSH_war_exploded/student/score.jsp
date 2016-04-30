@@ -45,7 +45,7 @@
                 </c:choose>
             </ul>
 
-            <form action="/SpringMVC_war_exploded/" class="nav-form navbar-right" method="post" role="button">
+            <form action="logout.action" class="nav-form navbar-right" method="post" role="button">
                 <button type="submit" class="btn btn-default navbar-btn" >退出</button>
             </form>
         </div>
@@ -63,7 +63,7 @@
 <div class="container text-center">
     <%--SCORE--%>
     <c:choose>
-        <c:when test="${sessionScope.loginStudent == null || sessionScope.loginStudent.score == -1}">
+        <c:when test="${sessionScope.loginStudent == null}">
             <div class="panel panel-default">
                 <!-- Default panel contents -->
                 <div class="panel-heading">成绩列表</div>
@@ -123,31 +123,80 @@
                     <tbody>
                     <tr>
                         <th scope="row">系统部署</th>
-                        <td>${sessionScope.loginStudent.deployscore}</td>
+                        <c:choose>
+                            <c:when test="${sessionScope.loginStudent.deployscore < 0}">
+                                <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
+                            </c:when>
+                            <c:otherwise>
+                                <td>${sessionScope.loginStudent.deployscore}</td>
+                            </c:otherwise>
+                        </c:choose>
                     </tr>
                     <tr>
                         <th scope="row">首页&链接检测</th>
-                        <td>${sessionScope.loginStudent.frontpagescore}</td>
+                        <c:choose>
+                            <c:when test="${sessionScope.loginStudent.frontpagescore < 0}">
+                                <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
+                            </c:when>
+                            <c:otherwise>
+                                <td>${sessionScope.loginStudent.frontpagescore}</td>
+                            </c:otherwise>
+                        </c:choose>
                     </tr>
                     <tr>
                         <th scope="row">功能检测</th>
-                        <td>${sessionScope.loginStudent.functionscore}</td>
+                        <c:choose>
+                            <c:when test="${sessionScope.loginStudent.functionscore < 0}">
+                                <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
+                            </c:when>
+                            <c:otherwise>
+                                <td>${sessionScope.loginStudent.functionscore}</td>
+                            </c:otherwise>
+                        </c:choose>
                     </tr>
                     <tr>
                         <th scope="row">性能检测</th>
-                        <td>${sessionScope.loginStudent.performancescore}</td>
+                        <c:choose>
+                            <c:when test="${sessionScope.loginStudent.performancescore < 0}">
+                                <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
+                            </c:when>
+                            <c:otherwise>
+                                <td>${sessionScope.loginStudent.performancescore}</td>
+                            </c:otherwise>
+                        </c:choose>
                     </tr>
                     <tr>
                         <th scope="row">代码检测</th>
-                        <td>${sessionScope.loginStudent.codescore}</td>
+                        <c:choose>
+                            <c:when test="${sessionScope.loginStudent.codescore < 0}">
+                                <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
+                            </c:when>
+                            <c:otherwise>
+                                <td>${sessionScope.loginStudent.codescore}</td>
+                            </c:otherwise>
+                        </c:choose>
                     </tr>
                     <tr>
                         <th scope="row">文档形式检测</th>
-                        <td>${sessionScope.loginStudent.documentscore}</td>
+                        <c:choose>
+                            <c:when test="${sessionScope.loginStudent.documentscore < 0}">
+                                <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
+                            </c:when>
+                            <c:otherwise>
+                                <td>${sessionScope.loginStudent.documentscore}</td>
+                            </c:otherwise>
+                        </c:choose>
                     </tr>
                     <tr>
                         <th scope="row">总分</th>
-                        <td>${sessionScope.loginStudent.score}</td>
+                        <c:choose>
+                            <c:when test="${sessionScope.loginStudent.score < 0}">
+                                <td><span class="glyphicon glyphicon-lock" aria-hidden="true"></span></td>
+                            </c:when>
+                            <c:otherwise>
+                                <td>${sessionScope.loginStudent.score}</td>
+                            </c:otherwise>
+                        </c:choose>
                     </tr>
                     </tbody>
                 </table>

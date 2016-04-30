@@ -62,7 +62,8 @@
 <hr>
 <div class="container text-center">
     <div class="well">
-        <form action="changeIP.mvc" method="post">
+        <%--                   完成这里的Action                    --%>
+        <form action="" method="post">
             <h3>配置部署IP地址</h3>
             <div class="row">
                 <div class="col-sm-5">

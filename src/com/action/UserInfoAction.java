@@ -92,7 +92,7 @@ public class UserInfoAction extends ActionSupport{
     }
 
     public String userInfo(){
-       List<UserEntity> allUser =  userManager.getExistUser();
+        List<UserEntity> allUser =  userManager.getExistUser();
         Map<String,Object> session = ActionContext.getContext().getSession();
         session.put("userList",allUser);
         return SUCCESS;

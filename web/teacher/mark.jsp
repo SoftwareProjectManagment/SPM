@@ -56,10 +56,15 @@
                             </li>--%>
                         </c:otherwise>
                     </c:choose>
+                    <li>
+                        <form action="markfinish.action" class="nav-form" method="post">
+                            <button type="submit" class="btn btn-primary navbar-btn">返回</button>
+                        </form>
+                    </li>
                 </ul>
-                <a href="/SSH_war_exploded/teacher/teacherpanel.jsp">
+                <%--<a href="/SSH_war_exploded/teacher/teacherpanel.jsp">
                     <button type="submit" class="btn btn-default navbar-btn" >返回</button>
-                </a>
+                </a>--%>
             </div>
         </div>
     </nav>
@@ -82,7 +87,7 @@
                 <h2>部署打分</h2>
             </div>
             <div class="container text-center">
-                <form action="submit.action" class="form-inline" role="form" method="post">
+                <form action="submitDeploy.action" class="form-inline" role="form" method="post">
                     <div class="form-group">
                         <div class="input-group">
                             <c:choose>
@@ -103,7 +108,187 @@
         </div>
     </section>
 </div>
-
 <hr>
+
+<div class="container text-center">
+    <%--FRONTPAGE--%>
+    <section>
+        <div class="well" id="frontpage">
+            <div class="container text-center">
+                <%--introduction to modify--%>
+                <h2>首页&链接打分</h2>
+            </div>
+            <div class="container text-center">
+                <%--action to be modified--%>
+                <form action="submitFrontpage.action" class="form-inline" role="form" method="post">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <c:choose>
+                                <%--test to modify--%>
+                                <c:when test="${team.frontpagetest<0}">
+                                    <span class="input-group-addon">首页&链接打分</span>
+                                    <%--name to modify--%>
+                                    <input class="form-control" name="frontpagepoint" type="text" placeholder="得分"/>
+                                </c:when>
+                                <c:otherwise>
+                                    <span class="input-group-addon">首页&链接打分</span>
+                                    <%--name to modify--%>
+                                    <input class="form-control" name="frontpagepoint" type="text" placeholder="得分" value="${team.frontpagetest}"/>
+                                </c:otherwise>
+                            </c:choose>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">提交分数</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+<hr>
+
+<div class="container text-center">
+    <%--FUNCTION--%>
+    <section>
+        <div class="well" id="function">
+            <div class="container text-center">
+                <%--introduction to modify--%>
+                <h2>功能打分</h2>
+            </div>
+            <div class="container text-center">
+                <%--action to be modified--%>
+                <form action="submitFunction.action" class="form-inline" role="form" method="post">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <c:choose>
+                                <%--test to modify--%>
+                                <c:when test="${team.functiontest<0}">
+                                    <span class="input-group-addon">功能打分</span>
+                                    <%--name to modify--%>
+                                    <input class="form-control" name="functionpoint" type="text" placeholder="得分"/>
+                                </c:when>
+                                <c:otherwise>
+                                    <span class="input-group-addon">功能打分</span>
+                                    <%--name to modify--%>
+                                    <input class="form-control" name="functionpoint" type="text" placeholder="得分" value="${team.functiontest}"/>
+                                </c:otherwise>
+                            </c:choose>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">提交分数</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+<hr>
+
+<div class="container text-center">
+    <%--PERFORMANCE--%>
+    <section>
+        <div class="well" id="performance">
+            <div class="container text-center">
+                <%--introduction to modify--%>
+                <h2>性能打分</h2>
+            </div>
+            <div class="container text-center">
+                <%--action to be modified--%>
+                <form action="submitPerformance.action" class="form-inline" role="form" method="post">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <c:choose>
+                                <%--test to modify--%>
+                                <c:when test="${team.performancetest<0}">
+                                    <span class="input-group-addon">性能打分</span>
+                                    <%--name to modify--%>
+                                    <input class="form-control" name="performancepoint" type="text" placeholder="得分"/>
+                                </c:when>
+                                <c:otherwise>
+                                    <span class="input-group-addon">性能打分</span>
+                                    <%--name to modify--%>
+                                    <input class="form-control" name="performancepoint" type="text" placeholder="得分" value="${team.performancetest}"/>
+                                </c:otherwise>
+                            </c:choose>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">提交分数</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+<hr>
+
+<div class="container text-center">
+    <%--CODE--%>
+    <section>
+        <div class="well" id="code">
+            <div class="container text-center">
+                <%--introduction to modify--%>
+                <h2>代码打分</h2>
+            </div>
+            <div class="container text-center">
+                <%--action to be modified--%>
+                <form action="submitCodeOne.action" class="form-inline" role="form" method="post">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <c:choose>
+                                <%--test to modify--%>
+                                <c:when test="${team.codetestone<0}">
+                                    <span class="input-group-addon">代码打分</span>
+                                    <%--name to modify--%>
+                                    <input class="form-control" name="codeonepoint" type="text" placeholder="得分"/>
+                                </c:when>
+                                <c:otherwise>
+                                    <span class="input-group-addon">代码打分</span>
+                                    <%--name to modify--%>
+                                    <input class="form-control" name="codeonepoint" type="text" placeholder="得分" value="${team.codetestone}"/>
+                                </c:otherwise>
+                            </c:choose>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">提交分数</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+<hr>
+
+<div class="container text-center">
+    <%--DOCUMENT--%>
+    <section>
+        <div class="well" id="document">
+            <div class="container text-center">
+                <%--introduction to modify--%>
+                <h2>文档打分</h2>
+            </div>
+            <div class="container text-center">
+                <%--action to be modified--%>
+                <form action="submitDocuemnt.action" class="form-inline" role="form" method="post">
+                    <div class="form-group">
+                        <div class="input-group">
+                            <c:choose>
+                                <%--test to modify--%>
+                                <c:when test="${team.documentest<0}">
+                                    <span class="input-group-addon">代码打分</span>
+                                    <%--name to modify--%>
+                                    <input class="form-control" name="documentpoint" type="text" placeholder="得分"/>
+                                </c:when>
+                                <c:otherwise>
+                                    <span class="input-group-addon">代码打分</span>
+                                    <%--name to modify--%>
+                                    <input class="form-control" name="documentpoint" type="text" placeholder="得分" value="${team.documentest}"/>
+                                </c:otherwise>
+                            </c:choose>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">提交分数</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</div>
+<hr>
+
 </body>
 </html>
